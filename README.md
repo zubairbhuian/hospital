@@ -4,8 +4,8 @@ Hellow, This is an Hospital Management applications </br>
 
 <img width="200"  src='doctor.gif'/>
 
-Designer [Omor Farukh]() </br>
-Developer [Zubair Bhuian]()
+Designer [Omar Faruk](https://web.facebook.com/omarfarukuiux) </br>
+Developer [Zubair Bhuian](https://web.facebook.com/zubair.bhuian)
 
 ## Directory
 ```dart
