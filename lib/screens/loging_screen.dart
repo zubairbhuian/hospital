@@ -5,15 +5,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/screens/forget_password_screen.dart';
+
+import 'package:hospital/screens/regestration_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
-import '../main.dart';
 import '../widgets/custom_appbar_shape.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
-  final VoidCallback onClickedSignUp;
-  const LoginScreen({Key? key, required this.onClickedSignUp})
-      : super(key: key);
+  const LoginScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -158,6 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.lock,
+                            // Icons.remove_red_eye,
                             color: AppColor.textColorLite,
                             size: 25,
                           ),
@@ -168,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     setState(() {});
                                   },
                                   icon: const Icon(
-                                    Icons.remove_red_eye,
+                                    Icons.visibility_off,
                                     color: AppColor.textColorLite,
                                   ))
                               : IconButton(
@@ -176,7 +179,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                     obscureText = true;
                                     setState(() {});
                                   },
-                                  icon: const Icon(Icons.visibility_off)),
+                                  icon: const Icon(
+                                    Icons.remove_red_eye,
+                                  )),
                           enabledBorder: const OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30)),
@@ -203,9 +208,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           style: TextStyle(color: AppColor.green, fontSize: 15),
                         ),
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (contex) =>
-                                  const ForgotPasswordScreen()));
+                          Get.off(() => const ForgotPasswordScreen());
                         },
                       ),
                     ),
@@ -231,8 +234,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   "Err",
                                   "${e.message}");
                             }
-                            navigatorKey.currentState!
-                                .popUntil((route) => route.isFirst);
+                            // navigatorKey.currentState!
+                            //     .popUntil((route) => route.isFirst);
+                          }
+                          if (FirebaseAuth.instance.currentUser!.email !=
+                              null) {
+                            Get.off(() => const HomeScreen());
                           }
                         },
                         style: ElevatedButton.styleFrom(
@@ -250,7 +257,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             children: [
                           TextSpan(
                               recognizer: TapGestureRecognizer()
-                                ..onTap = widget.onClickedSignUp,
+                                ..onTap = () {
+                                  Get.off(() => const RegestrationScreen());
+                                },
                               text: ' Create new',
                               style: const TextStyle(
                                   fontWeight: FontWeight.w500,

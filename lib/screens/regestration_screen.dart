@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hospital/screens/loging_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
 import '../widgets/custom_appbar_shape.dart';
+import 'home_screen.dart';
 
 class RegestrationScreen extends StatefulWidget {
-  final VoidCallback onClickedSignIn;
-  const RegestrationScreen({Key? key, required this.onClickedSignIn})
-      : super(key: key);
+  const RegestrationScreen({Key? key, required}) : super(key: key);
 
   @override
   State<RegestrationScreen> createState() => _RegestrationScreenState();
@@ -23,7 +23,6 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
   final _passwordControter = TextEditingController();
   final _repasswordControter = TextEditingController();
   bool obscureText = true;
-  bool reobscureText = true;
 
   @override
   void dispose() {
@@ -40,6 +39,17 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
             elevation: 0.0,
             toolbarHeight: 130,
             backgroundColor: Colors.transparent,
+            leading: Container(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    size: 15,
+                  ),
+                  onPressed: () {
+                    Get.off(() => const LoginScreen());
+                  },
+                )),
             flexibleSpace: ClipPath(
               clipper: CustomAppbarShape(),
               child: Container(
@@ -85,66 +95,27 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                         const SizedBox(
                           height: 150,
                         ),
-                        const Text('Full Name'),
                         TextFormField(
                           style: const TextStyle(
                             color: AppColor.textColor,
-                          ),
-                          // controller: _emailControter,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: const InputDecoration(
-                              // prefixIcon: Icon(
-                              //   Icons.email,
-                              //   color: Color.fromARGB(255, 114, 114, 114),
-                              //   size: 25,
-                              // ),
-                              errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: AppColor.borderColor, width: 1)),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(30)),
-                                  borderSide:
-                                      BorderSide(color: AppColor.borderColor)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(30)),
-                                  borderSide:
-                                      BorderSide(color: AppColor.green)),
-                              // hintText: 'Type Phone',
-                              hintStyle: TextStyle(
-                                  color: AppColor.textColorLite, fontSize: 14)),
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          validator: (String? value) {
-                            if (value!.isEmpty ||
-                                !RegExp(r"^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)")
-                                    .hasMatch(value)) {
-                              return 'Enter your valid Email';
-                            }
-                            return null;
-                          },
-                        ),
-                        TextFormField(
-                          style: const TextStyle(
-                            color: Color.fromARGB(255, 99, 99, 99),
                           ),
                           controller: _emailControter,
                           keyboardType: TextInputType.emailAddress,
                           decoration: const InputDecoration(
                               prefixIcon: Icon(
                                 Icons.email,
-                                color: Color.fromARGB(255, 114, 114, 114),
+                                color: AppColor.textColorLite,
                                 size: 25,
                               ),
                               enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color: Color.fromARGB(255, 90, 90, 90))),
+                                  borderSide:
+                                      BorderSide(color: AppColor.borderColor)),
                               focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blue)),
+                                  borderSide:
+                                      BorderSide(color: AppColor.green)),
                               hintText: 'Email',
                               hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 119, 119, 119),
-                                  fontSize: 14)),
+                                  color: AppColor.textColorLite, fontSize: 14)),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (String? value) {
                             if (value!.isEmpty ||
@@ -159,41 +130,24 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                           controller: _passwordControter,
                           obscureText: obscureText,
                           style: const TextStyle(
-                            color: Color.fromARGB(255, 109, 109, 109),
+                            color: AppColor.textColor,
                           ),
                           keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              prefixIcon: const Icon(
+                          decoration: const InputDecoration(
+                              prefixIcon: Icon(
                                 Icons.lock,
-                                color: Color.fromARGB(255, 114, 114, 114),
+                                color: AppColor.textColorLite,
                                 size: 25,
                               ),
-                              suffixIcon: obscureText == true
-                                  ? IconButton(
-                                      onPressed: () {
-                                        obscureText = false;
-                                        setState(() {});
-                                      },
-                                      icon: const Icon(
-                                        Icons.remove_red_eye,
-                                        color: Colors.blue,
-                                      ))
-                                  : IconButton(
-                                      onPressed: () {
-                                        obscureText = true;
-                                        setState(() {});
-                                      },
-                                      icon: const Icon(Icons.visibility_off)),
-                              enabledBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color:
-                                          Color.fromARGB(255, 119, 119, 119))),
-                              focusedBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blue)),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: AppColor.borderColor)),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: AppColor.green)),
                               hintText: 'Password',
-                              hintStyle: const TextStyle(
-                                  color: Color.fromARGB(255, 122, 122, 122),
-                                  fontSize: 14)),
+                              hintStyle: TextStyle(
+                                  color: AppColor.textColorLite, fontSize: 14)),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -207,43 +161,44 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                         ),
                         TextFormField(
                           controller: _repasswordControter,
-                          obscureText: reobscureText,
+                          obscureText: obscureText,
                           style: const TextStyle(
-                            color: Color.fromARGB(255, 110, 110, 110),
+                            color: AppColor.textColor,
                           ),
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               prefixIcon: const Icon(
                                 Icons.lock,
-                                color: Color.fromARGB(255, 61, 61, 61),
+                                color: AppColor.textColorLite,
                                 size: 25,
                               ),
-                              suffixIcon: reobscureText == true
+                              suffixIcon: obscureText == true
                                   ? IconButton(
                                       onPressed: () {
-                                        reobscureText = false;
+                                        obscureText = false;
+                                        setState(() {});
+                                      },
+                                      icon: const Icon(
+                                        Icons.visibility_off,
+                                        color: AppColor.textColorLite,
+                                      ))
+                                  : IconButton(
+                                      onPressed: () {
+                                        obscureText = true;
                                         setState(() {});
                                       },
                                       icon: const Icon(
                                         Icons.remove_red_eye,
-                                        color: Colors.blue,
-                                      ))
-                                  : IconButton(
-                                      onPressed: () {
-                                        reobscureText = true;
-                                        setState(() {});
-                                      },
-                                      icon: const Icon(Icons.visibility_off)),
+                                      )),
                               enabledBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                      color:
-                                          Color.fromARGB(255, 138, 138, 138))),
+                                  borderSide:
+                                      BorderSide(color: AppColor.borderColor)),
                               focusedBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.blue)),
+                                  borderSide:
+                                      BorderSide(color: AppColor.green)),
                               hintText: 'Password',
                               hintStyle: const TextStyle(
-                                  color: Color.fromARGB(255, 134, 134, 134),
-                                  fontSize: 14)),
+                                  color: AppColor.textColorLite, fontSize: 14)),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -278,10 +233,17 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                                       "${e.message}");
                                 }
                               }
+                              if (FirebaseAuth.instance.currentUser!.email !=
+                                  null) {
+                                Get.off(() => const HomeScreen());
+                              }
                             },
                             child: const Center(child: Text('Sign Up'))),
                         const SizedBox(
                           height: 14,
+                        ),
+                        SizedBox(
+                          height: 150.h,
                         ),
                         RichText(
                             text: TextSpan(
@@ -292,12 +254,12 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                                 children: [
                               TextSpan(
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = widget.onClickedSignIn,
+                                    ..onTap = () {
+                                      Get.off(() => const LoginScreen());
+                                    },
                                   text: 'Log in',
-                                  style: const TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: AppColor.green))
-                            ]))
+                                  style: const TextStyle(color: AppColor.green))
+                            ])),
                       ],
                     ),
                   ),

@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:hospital/screens/loging_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-class Demo extends StatefulWidget {
-  const Demo({Key? key}) : super(key: key);
+class IntroScreen extends StatefulWidget {
+  const IntroScreen({Key? key}) : super(key: key);
 
   @override
-  State<Demo> createState() => _DemoState();
+  State<IntroScreen> createState() => _IntroScreenState();
 }
 
-class _DemoState extends State<Demo> {
+class _IntroScreenState extends State<IntroScreen> {
   hideStatusBar() {
     WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.green, systemNavigationBarColor: Colors.green));
+      statusBarColor: Colors.green,
+    ));
   }
 
   @override
@@ -71,7 +74,7 @@ class _DemoState extends State<Demo> {
                     ))
               ],
             ),
-           ),
+          ),
           Padding(
             padding: const EdgeInsets.only(
                 top: 100, bottom: 20, left: 20, right: 20),
@@ -82,7 +85,9 @@ class _DemoState extends State<Demo> {
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30))),
                       maximumSize: const Size(double.maxFinite, 100.0)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.off(() => const LoginScreen());
+                  },
                   child: const Text('Get Started')),
             ),
           ),

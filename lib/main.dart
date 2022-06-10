@@ -3,8 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hospital/screens/auth_screen.dart';
-import 'package:hospital/screens/home_scteen.dart';
+import 'package:hospital/screens/home_screen.dart';
+import 'package:hospital/screens/introduction_screen.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,7 +47,7 @@ class AuthControler extends StatelessWidget {
             } else if (snapshot.hasData) {
               return const HomeScreen();
             } else {
-              return const AuthScreen();
+              return const IntroScreen();
             }
           }),
     );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hospital/screens/loging_screen.dart';
 
 import '../utils/app_color.dart';
 import '../widgets/custom_appbar_shape.dart';
@@ -36,7 +37,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     size: 15,
                   ),
                   onPressed: () {
-                    Navigator.pop(context);
+                    Get.off(() => const LoginScreen());
                   },
                 )),
             centerTitle: true,
