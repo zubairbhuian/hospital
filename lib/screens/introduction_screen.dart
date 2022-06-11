@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/screens/loging_screen.dart';
+import 'package:hospital/utils/app_color.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -38,11 +39,15 @@ class _IntroScreenState extends State<IntroScreen> {
               showNextButton: false,
               showDoneButton: false,
               dotsDecorator: const DotsDecorator(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  size: Size(10.0, 10.0),
-                  color: Colors.green,
-                  activeSize: Size(22.0, 10)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                activeColor: Color(0xff8E9195),
+                activeShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                activeSize: Size(36, 8),
+                size: Size(8, 8),
+                color: AppColor.textColorLite,
+              ),
               pages: [
                 PageViewModel(
                     decoration: const PageDecoration(

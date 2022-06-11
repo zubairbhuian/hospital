@@ -10,7 +10,7 @@ import 'package:hospital/screens/introduction_screen.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Orientation
-    SystemChrome.setPreferredOrientations(
+  SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   await Firebase.initializeApp();
   runApp(const MyApp());

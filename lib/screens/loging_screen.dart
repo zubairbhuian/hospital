@@ -133,11 +133,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30)),
                               borderSide: BorderSide(color: AppColor.green)),
-                          // enabledBorder: UnderlineInputBorder(
-                          //     borderSide: BorderSide(
-                          //         color: Color.fromARGB(255, 94, 94, 94))),
-                          // focusedBorder: UnderlineInputBorder(
-                          //     borderSide: BorderSide(color: Colors.blue)),
                           hintText: 'Email',
                           hintStyle: TextStyle(
                               color: AppColor.textColorLite, fontSize: 14)),
