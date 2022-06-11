@@ -10,7 +10,7 @@ import 'package:hospital/screens/regestration_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
 import '../widgets/custom_appbar_shape.dart';
-import 'home_screen.dart';
+import 'main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
@@ -36,55 +36,53 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-            elevation: 0.0,
-            toolbarHeight: 130,
-            backgroundColor: Colors.transparent,
-            flexibleSpace: ClipPath(
-              clipper: CustomAppbarShape(),
-              child: Container(
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [AppColor.green, AppColor.amber],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomRight)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset('images/head.png',
-                        width: 52.w, height: 54.53.h),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Dementia-Patients",
-                            style: GoogleFonts.inter(
-                              textStyle: TextStyle(
-                                  fontSize: 22.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColor.white),
-                            )),
-                        Text("Support To Home",
-                            style: GoogleFonts.quicksand(
-                              textStyle: const TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColor.white),
-                            )),
-                      ],
-                    )
-                  ],
-                ),
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+          elevation: 0.0,
+          toolbarHeight: 130,
+          backgroundColor: Colors.transparent,
+          flexibleSpace: ClipPath(
+            clipper: CustomAppbarShape(),
+            child: Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [AppColor.green, AppColor.amber],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomRight)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset('images/head.png', width: 52.w, height: 54.53.h),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Dementia-Patients",
+                          style: GoogleFonts.inter(
+                            textStyle: TextStyle(
+                                fontSize: 22.sp,
+                                fontWeight: FontWeight.w700,
+                                color: AppColor.white),
+                          )),
+                      Text("Support To Home",
+                          style: GoogleFonts.quicksand(
+                            textStyle: const TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                                color: AppColor.white),
+                          )),
+                    ],
+                  )
+                ],
               ),
-            )),
-        body: SizedBox(
-          width: double.maxFinite,
-          height: double.maxFinite,
-          child: SingleChildScrollView(
+            ),
+          )),
+      body: Column(
+        children: [
+          Expanded(
             child: Padding(
               padding: const EdgeInsets.all(25),
               child: Form(
@@ -92,9 +90,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(
-                      height: 150,
-                    ),
                     Text('Welcome Back!',
                         style: GoogleFonts.inter(
                           textStyle: TextStyle(
@@ -239,37 +234,38 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                           if (FirebaseAuth.instance.currentUser!.email !=
                               null) {
-                            Get.off(() => const HomeScreen());
+                            Get.off(() => const MainScreen());
                           }
                         },
                         style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30.0))),
                         child: const Center(child: Text('Sign in'))),
-                    SizedBox(
-                      height: 150.h,
-                    ),
-                    RichText(
-                        text: TextSpan(
-                            text: 'Don’t have an account?  ',
-                            style: const TextStyle(
-                                color: AppColor.black, fontSize: 15),
-                            children: [
-                          TextSpan(
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Get.off(() => const RegestrationScreen());
-                                },
-                              text: ' Create new',
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColor.blue))
-                        ]))
                   ],
                 ),
               ),
             ),
           ),
-        ),
-      );
+          SizedBox(
+            height: 85,
+            child: Center(
+              child: RichText(
+                  text: TextSpan(
+                      text: 'Don’t have an account?  ',
+                      style:
+                          const TextStyle(color: AppColor.black, fontSize: 15),
+                      children: [
+                    TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Get.off(() => const RegestrationScreen());
+                          },
+                        text: ' Create new',
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w500, color: AppColor.blue))
+                  ])),
+            ),
+          )
+        ],
+      ));
 }

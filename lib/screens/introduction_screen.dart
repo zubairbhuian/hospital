@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/screens/loging_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -43,41 +45,83 @@ class _IntroScreenState extends State<IntroScreen> {
                   activeSize: Size(22.0, 10)),
               pages: [
                 PageViewModel(
-                    title: 'Care For Home',
-                    bodyWidget:
-                        const Text('Help our family members back home.'),
+                    decoration: const PageDecoration(
+                      imageFlex: 3,
+                      bodyFlex: 0,
+                      imagePadding: EdgeInsets.only(bottom: 5),
+                      titlePadding: EdgeInsets.only(top: 5, bottom: 24.0),
+                    ),
+                    titleWidget: Text(
+                      'Care For Home',
+                      style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                              fontSize: 34.sp, fontWeight: FontWeight.w600)),
+                    ),
+                    bodyWidget: Text(
+                      'Help our family members back home.',
+                      style: GoogleFonts.quicksand(
+                          textStyle: TextStyle(
+                              fontSize: 17.sp, fontWeight: FontWeight.w500)),
+                    ),
                     image: const Image(
-                      height: 400,
                       image: AssetImage(
                         'images/intro_1.png',
                       ),
                     )),
                 PageViewModel(
-                    title: 'Care For Home',
-                    bodyWidget:
-                        const Text('Help our family members back home.'),
+                    decoration: const PageDecoration(
+                      imageFlex: 3,
+                      bodyFlex: 0,
+                      imagePadding: EdgeInsets.only(bottom: 5),
+                      titlePadding: EdgeInsets.only(top: 5, bottom: 24.0),
+                    ),
+                    titleWidget: Text(
+                      'Care For Home',
+                      style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                              fontSize: 34.sp, fontWeight: FontWeight.w600)),
+                    ),
+                    bodyWidget: Text(
+                      'Help our family members back home.',
+                      style: GoogleFonts.quicksand(
+                          textStyle: TextStyle(
+                              fontSize: 17.sp, fontWeight: FontWeight.w500)),
+                    ),
                     image: const Image(
-                      height: 400,
                       image: AssetImage(
                         'images/intro_1.png',
                       ),
                     )),
                 PageViewModel(
-                    title: 'Care For Home',
-                    bodyWidget:
-                        const Text('Help our family members back home.'),
+                    decoration: const PageDecoration(
+                      imageFlex: 3,
+                      bodyFlex: 0,
+                      imagePadding: EdgeInsets.only(bottom: 5),
+                      titlePadding: EdgeInsets.only(top: 5, bottom: 24.0),
+                    ),
+                    titleWidget: Text(
+                      'Care For Home',
+                      style: GoogleFonts.inter(
+                          textStyle: TextStyle(
+                              fontSize: 34.sp, fontWeight: FontWeight.w600)),
+                    ),
+                    bodyWidget: Text(
+                      'Help our family members back home.',
+                      style: GoogleFonts.quicksand(
+                          textStyle: TextStyle(
+                              fontSize: 17.sp, fontWeight: FontWeight.w500)),
+                    ),
                     image: const Image(
-                      height: 700,
                       image: AssetImage(
                         'images/intro_1.png',
                       ),
-                    ))
+                    )),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-                top: 100, bottom: 20, left: 20, right: 20),
+            padding:
+                const EdgeInsets.only(top: 50, bottom: 30, left: 20, right: 20),
             child: SizedBox(
               width: double.maxFinite,
               child: ElevatedButton(

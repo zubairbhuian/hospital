@@ -2,6 +2,7 @@ import 'dart:ui';
 
 class AppColor {
   static const green = Color(0xff1EA922);
+  static const greenLite = Color(0xffC4CD26);
   static const red = Color.fromARGB(255, 245, 30, 1);
   static const blue = Color.fromARGB(255, 29, 62, 245);
   static const white = Color.fromARGB(255, 243, 250, 246);

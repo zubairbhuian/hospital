@@ -8,7 +8,7 @@ import 'package:hospital/screens/loging_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
 import '../widgets/custom_appbar_shape.dart';
-import 'home_screen.dart';
+import 'main_screen.dart';
 
 class RegestrationScreen extends StatefulWidget {
   const RegestrationScreen({Key? key, required}) : super(key: key);
@@ -34,56 +34,58 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-            elevation: 0.0,
-            toolbarHeight: 130,
-            backgroundColor: Colors.transparent,
-            leading: Container(
-                padding: const EdgeInsets.only(bottom: 40),
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    size: 15,
-                  ),
-                  onPressed: () {
-                    Get.off(() => const LoginScreen());
-                  },
-                )),
-            flexibleSpace: ClipPath(
-              clipper: CustomAppbarShape(),
-              child: Container(
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [AppColor.green, AppColor.amber],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomRight)),
-                child: Column(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Create Account",
-                        style: GoogleFonts.inter(
-                          textStyle: TextStyle(
-                              fontSize: 30.sp,
-                              fontWeight: FontWeight.w700,
-                              color: AppColor.white),
-                        )),
-                    Text("Enter info registration",
-                        style: GoogleFonts.quicksand(
-                          textStyle: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                              color: AppColor.white),
-                        )),
-                  ],
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+          elevation: 0.0,
+          toolbarHeight: 130,
+          backgroundColor: Colors.transparent,
+          leading: Container(
+              padding: const EdgeInsets.only(bottom: 40),
+              child: IconButton(
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  size: 15,
                 ),
+                onPressed: () {
+                  Get.off(() => const LoginScreen());
+                },
+              )),
+          flexibleSpace: ClipPath(
+            clipper: CustomAppbarShape(),
+            child: Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [AppColor.green, AppColor.amber],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomRight)),
+              child: Column(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Create Account",
+                      style: GoogleFonts.inter(
+                        textStyle: TextStyle(
+                            fontSize: 30.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColor.white),
+                      )),
+                  Text("Enter info registration",
+                      style: GoogleFonts.quicksand(
+                        textStyle: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: AppColor.white),
+                      )),
+                ],
               ),
-            )),
-        body: SizedBox(
-          width: double.maxFinite,
-          height: double.maxFinite,
-          child: Center(
+            ),
+          )),
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 100,
+          ),
+          Expanded(
             child: Padding(
                 padding: const EdgeInsets.all(25),
                 child: SingleChildScrollView(
@@ -235,7 +237,7 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                               }
                               if (FirebaseAuth.instance.currentUser!.email !=
                                   null) {
-                                Get.off(() => const HomeScreen());
+                                Get.off(() => const MainScreen());
                               }
                             },
                             child: const Center(child: Text('Sign Up'))),
@@ -245,26 +247,31 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                         SizedBox(
                           height: 150.h,
                         ),
-                        RichText(
-                            text: TextSpan(
-                                text: 'Already have an account?  ',
-                                style: const TextStyle(
-                                    color: Color.fromARGB(255, 143, 143, 143),
-                                    fontSize: 15),
-                                children: [
-                              TextSpan(
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      Get.off(() => const LoginScreen());
-                                    },
-                                  text: 'Log in',
-                                  style: const TextStyle(color: AppColor.green))
-                            ])),
                       ],
                     ),
                   ),
                 )),
           ),
-        ),
-      );
+          SizedBox(
+            height: 85,
+            child: Center(
+              child: RichText(
+                  text: TextSpan(
+                      text: 'Already have an account?  ',
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 143, 143, 143),
+                          fontSize: 15),
+                      children: [
+                    TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Get.off(() => const LoginScreen());
+                          },
+                        text: 'Log in',
+                        style: const TextStyle(color: AppColor.green))
+                  ])),
+            ),
+          )
+        ],
+      ));
 }
