@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/screens/loging_screen.dart';
 import 'package:hospital/utils/app_color.dart';
+import 'package:hospital/widgets/custom_btn.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _IntroScreenState extends State<IntroScreen> {
   hideStatusBar() {
     WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.green,
+      statusBarColor: AppColor.green,
     ));
   }
 
@@ -128,17 +129,13 @@ class _IntroScreenState extends State<IntroScreen> {
             padding:
                 const EdgeInsets.only(top: 50, bottom: 30, left: 20, right: 20),
             child: SizedBox(
-              width: double.maxFinite,
-              child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(30))),
-                      maximumSize: const Size(double.maxFinite, 100.0)),
+                width: double.maxFinite,
+                child: CustomBtn(
                   onPressed: () {
                     Get.off(() => const LoginScreen());
                   },
-                  child: const Text('Get Started')),
-            ),
+                  title: 'Get Started',
+                )),
           ),
         ],
       )),

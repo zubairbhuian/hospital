@@ -10,6 +10,7 @@ import 'package:hospital/screens/regestration_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
 import '../widgets/custom_appbar_shape.dart';
+import '../widgets/custom_btn.dart';
 import 'main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -25,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _emailControter = TextEditingController();
   final _passwordControter = TextEditingController();
+  final _key1 = GlobalKey();
   bool obscureText = true;
 
   @override
@@ -38,6 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) => Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+          leading: const SizedBox(height: 10),
           elevation: 0.0,
           toolbarHeight: 130,
           backgroundColor: Colors.transparent,
@@ -80,164 +83,159 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           )),
-      body: Column(
+      body: ListView(
         children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(25),
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Welcome Back!',
-                        style: GoogleFonts.inter(
-                          textStyle: TextStyle(
-                              fontSize: 34.sp,
-                              fontWeight: FontWeight.w600,
-                              color: AppColor.black),
-                        )),
-                    const SizedBox(
-                      height: 10,
+          Padding(
+            padding: const EdgeInsets.all(25),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Welcome Back!',
+                      style: GoogleFonts.inter(
+                        textStyle: TextStyle(
+                            fontSize: 34.sp,
+                            fontWeight: FontWeight.w600,
+                            color: AppColor.black),
+                      )),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                      'You will get best quality health care service with the low cost',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.quicksand(
+                        textStyle: TextStyle(
+                            fontSize: 17.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColor.grayLite),
+                      )),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    style: const TextStyle(
+                      color: AppColor.textColor,
                     ),
-                    Text(
-                        'You will get best quality health care service with the low cost',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.quicksand(
-                          textStyle: TextStyle(
-                              fontSize: 17.sp,
-                              fontWeight: FontWeight.w500,
-                              color: AppColor.grayLite),
-                        )),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextFormField(
-                      style: const TextStyle(
-                        color: AppColor.textColor,
-                      ),
-                      controller: _emailControter,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                          prefixIcon: Icon(
-                            Icons.email,
-                            color: AppColor.textColorLite,
-                            size: 25,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                              borderSide: BorderSide(color: AppColor.green)),
-                          hintText: 'Email',
-                          hintStyle: TextStyle(
-                              color: AppColor.textColorLite, fontSize: 14)),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    TextFormField(
-                      controller: _passwordControter,
-                      obscureText: obscureText,
-                      style: const TextStyle(
-                        color: AppColor.textColor,
-                      ),
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          prefixIcon: const Icon(
-                            Icons.lock,
-                            // Icons.remove_red_eye,
-                            color: AppColor.textColorLite,
-                            size: 25,
-                          ),
-                          suffixIcon: obscureText == true
-                              ? IconButton(
-                                  onPressed: () {
-                                    obscureText = false;
-                                    setState(() {});
-                                  },
-                                  icon: const Icon(
-                                    Icons.visibility_off,
-                                    color: AppColor.textColorLite,
-                                  ))
-                              : IconButton(
-                                  onPressed: () {
-                                    obscureText = true;
-                                    setState(() {});
-                                  },
-                                  icon: const Icon(
-                                    Icons.remove_red_eye,
-                                  )),
-                          enabledBorder: const OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          focusedBorder: const OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(30)),
-                              borderSide: BorderSide(color: AppColor.green)),
-                          hintText: 'Password',
-                          hintStyle: const TextStyle(
-                              color: AppColor.textColorLite, fontSize: 14)),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    SizedBox(
-                      width: 100.sw,
-                      child: GestureDetector(
-                        child: const Text(
-                          'Forgot Password?',
-                          textAlign: TextAlign.end,
-                          style: TextStyle(color: AppColor.green, fontSize: 15),
+                    controller: _emailControter,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(
+                        contentPadding:
+                            EdgeInsets.only(bottom: 15.5, top: 15.5),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: AppColor.textColorLite,
+                          size: 25,
                         ),
-                        onTap: () {
-                          Get.off(() => const ForgotPasswordScreen());
-                        },
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide:
+                                BorderSide(color: AppColor.borderColor)),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide(color: AppColor.green)),
+                        hintText: 'Email',
+                        hintStyle: TextStyle(
+                            color: AppColor.textColorLite, fontSize: 14)),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    controller: _passwordControter,
+                    obscureText: obscureText,
+                    style: const TextStyle(
+                      color: AppColor.textColor,
+                    ),
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                        contentPadding:
+                            const EdgeInsets.only(bottom: 15.5, top: 15.5),
+                        prefixIcon: const Icon(
+                          Icons.lock,
+                          // Icons.remove_red_eye,
+                          color: AppColor.textColorLite,
+                          size: 25,
+                        ),
+                        suffixIcon: obscureText == true
+                            ? IconButton(
+                                onPressed: () {
+                                  obscureText = false;
+                                  setState(() {});
+                                },
+                                icon: const Icon(
+                                  Icons.visibility_off,
+                                  color: AppColor.textColorLite,
+                                ))
+                            : IconButton(
+                                onPressed: () {
+                                  obscureText = true;
+                                  setState(() {});
+                                },
+                                icon: const Icon(
+                                  Icons.remove_red_eye,
+                                )),
+                        enabledBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderSide:
+                                BorderSide(color: AppColor.borderColor)),
+                        focusedBorder: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderSide: BorderSide(color: AppColor.green)),
+                        hintText: 'Password',
+                        hintStyle: const TextStyle(
+                            color: AppColor.textColorLite, fontSize: 14)),
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                  ),
+                  const SizedBox(
+                    height: 6,
+                  ),
+                  SizedBox(
+                    width: 100.sw,
+                    child: GestureDetector(
+                      child: const Text(
+                        'Forgot Password?',
+                        textAlign: TextAlign.end,
+                        style: TextStyle(color: AppColor.green, fontSize: 15),
                       ),
+                      onTap: () {
+                        Get.off(() => const ForgotPasswordScreen());
+                      },
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ElevatedButton(
-                        onPressed: () async {
-                          if (_formKey.currentState!.validate()) {
-                            try {
-                              showDialog(
-                                  context: context,
-                                  builder: (contex) => const Center(
-                                        child: CircularProgressIndicator(),
-                                      ));
-                              await FirebaseAuth.instance
-                                  .signInWithEmailAndPassword(
-                                      email: _emailControter.text.trim(),
-                                      password: _passwordControter.text.trim());
-                            } on FirebaseAuthException catch (e) {
-                              Get.snackbar(
-                                  snackPosition: SnackPosition.BOTTOM,
-                                  "Err",
-                                  "${e.message}");
-                            }
-                            // navigatorKey.currentState!
-                            //     .popUntil((route) => route.isFirst);
-                          }
-                          if (FirebaseAuth.instance.currentUser!.email !=
-                              null) {
-                            Get.off(() => const MainScreen());
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30.0))),
-                        child: const Center(child: Text('Sign in'))),
-                  ],
-                ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomBtn(
+                    onPressed: () async {
+                      if (_formKey.currentState!.validate()) {
+                        try {
+                          showDialog(
+                              context: context,
+                              builder: (contex) => const Center(
+                                    child: CircularProgressIndicator(),
+                                  ));
+                          await FirebaseAuth.instance
+                              .signInWithEmailAndPassword(
+                                  email: _emailControter.text.trim(),
+                                  password: _passwordControter.text.trim());
+                        } on FirebaseAuthException catch (e) {
+                          Get.snackbar(
+                              snackPosition: SnackPosition.BOTTOM,
+                              "Err",
+                              "${e.message}");
+                        }
+                        // navigatorKey.currentState!
+                        //     .popUntil((route) => route.isFirst);
+                      }
+                      if (FirebaseAuth.instance.currentUser!.email != null) {
+                        Get.off(() => const MainScreen());
+                      }
+                    },
+                    title: 'Sign in',
+                  ),
+                ],
               ),
             ),
           ),

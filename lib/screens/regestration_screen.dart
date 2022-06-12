@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/screens/loging_screen.dart';
 import 'package:hospital/utils/app_color.dart';
+import 'package:hospital/widgets/custom_btn.dart';
 
 import '../widgets/custom_appbar_shape.dart';
 import 'main_screen.dart';
@@ -216,8 +217,7 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                         const SizedBox(
                           height: 20,
                         ),
-                        ElevatedButton(
-                            onPressed: () async {
+                        CustomBtn(title: 'Sign Up', onPressed: () async {
                               if (_formKey.currentState!.validate()) {
                                 // Process data.
                                 try {
@@ -239,8 +239,8 @@ class _RegestrationScreenState extends State<RegestrationScreen> {
                                   null) {
                                 Get.off(() => const MainScreen());
                               }
-                            },
-                            child: const Center(child: Text('Sign Up'))),
+                            },),
+        
                         const SizedBox(
                           height: 14,
                         ),
