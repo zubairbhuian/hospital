@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hospital/screens/main_screen.dart';
 import 'package:hospital/screens/introduction_screen.dart';
+import 'package:hospital/screens/main_screen.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
         builder: ((context, child) => GetMaterialApp(
             navigatorKey: navigatorKey,
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(primarySwatch: Colors.green),
+            theme: ThemeData(
+              primarySwatch: Colors.green,
+            ),
             home: const AuthControler())));
   }
 }
@@ -57,3 +59,4 @@ class AuthControler extends StatelessWidget {
     );
   }
 }
+// IntroScreen()

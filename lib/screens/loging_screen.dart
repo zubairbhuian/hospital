@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/screens/forget_password_screen.dart';
@@ -9,6 +10,7 @@ import 'package:hospital/screens/forget_password_screen.dart';
 import 'package:hospital/screens/regestration_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
+import '../widgets/auth_btn.dart';
 import '../widgets/custom_appbar_shape.dart';
 import '../widgets/custom_btn.dart';
 import 'main_screen.dart';
@@ -26,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _emailControter = TextEditingController();
   final _passwordControter = TextEditingController();
-  final _key1 = GlobalKey();
   bool obscureText = true;
 
   @override
@@ -38,6 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+      backgroundColor:AppColor.bgColorOne,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
           leading: const SizedBox(height: 10),
@@ -90,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Form(
               key: _formKey,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text('Welcome Back!',
                       style: GoogleFonts.inter(
@@ -112,12 +114,15 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: AppColor.grayLite),
                       )),
                   const SizedBox(
-                    height: 20,
+                    height: 28,
                   ),
                   TextFormField(
-                    style: const TextStyle(
-                      color: AppColor.textColor,
-                    ),
+                    style: GoogleFonts.inter(
+                        textStyle: const TextStyle(
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                            color: AppColor.textColor)),
                     controller: _emailControter,
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
@@ -129,25 +134,28 @@ class _LoginScreenState extends State<LoginScreen> {
                           size: 25,
                         ),
                         enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderRadius: BorderRadius.all(Radius.circular(80)),
                             borderSide:
                                 BorderSide(color: AppColor.borderColor)),
                         focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderRadius: BorderRadius.all(Radius.circular(80)),
                             borderSide: BorderSide(color: AppColor.green)),
                         hintText: 'Email',
                         hintStyle: TextStyle(
                             color: AppColor.textColorLite, fontSize: 14)),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 16,
                   ),
                   TextFormField(
                     controller: _passwordControter,
                     obscureText: obscureText,
-                    style: const TextStyle(
-                      color: AppColor.textColor,
-                    ),
+                    style: GoogleFonts.inter(
+                        textStyle: const TextStyle(
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                            color: AppColor.textColor)),
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         contentPadding:
@@ -177,11 +185,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Icons.remove_red_eye,
                                 )),
                         enabledBorder: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderRadius: BorderRadius.all(Radius.circular(80)),
                             borderSide:
                                 BorderSide(color: AppColor.borderColor)),
                         focusedBorder: const OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            borderRadius: BorderRadius.all(Radius.circular(80)),
                             borderSide: BorderSide(color: AppColor.green)),
                         hintText: 'Password',
                         hintStyle: const TextStyle(
@@ -235,12 +243,41 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     title: 'Sign in',
                   ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    children: [
+                      AuthBtn(
+                          btnTitle: 'facebook',
+                          icon: const FaIcon(
+                            FontAwesomeIcons.facebookF,
+                            color: Color(0xff3B5999),
+                            size: 17,
+                          ),
+                          onPressed: () {}),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      AuthBtn(
+                          btnTitle: 'Google',
+                          icon: const FaIcon(
+                            FontAwesomeIcons.google,
+                            color: Color(0xffDD4B39),
+                            size: 17,
+                          ),
+                          onPressed: () {}),
+                    ],
+                  ),
                 ],
               ),
             ),
           ),
           SizedBox(
-            height: 85,
+            height: 50.h,
+          ),
+          SizedBox(
+            height: 60.h,
             child: Center(
               child: RichText(
                   text: TextSpan(

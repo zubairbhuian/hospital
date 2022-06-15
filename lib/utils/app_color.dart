@@ -11,7 +11,7 @@ class AppColor {
   static const amber = Color(0xffDCE35B);
   static const textColorLite = Color(0xffB8B8B8);
   static const textColor = Color(0xff3C3D3F);
-  static const borderColor = Color(0xffEAEAEA);
-
+  static const borderColor = Color.fromARGB(255, 202, 202, 202);
+  static const bgColorOne = Color(0xffE5E5E5);
 }
 // 45B649

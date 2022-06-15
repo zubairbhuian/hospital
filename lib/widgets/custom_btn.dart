@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/app_color.dart';
 
@@ -14,9 +15,12 @@ class CustomBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed:onPressed,
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.all(17),
+            textStyle: GoogleFonts.inter(
+                textStyle:
+                    const TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
+            padding: const EdgeInsets.all(14.5),
             primary: AppColor.green,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0))),

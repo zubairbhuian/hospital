@@ -44,6 +44,6 @@ class _MainScreenState extends State<MainScreen> {
               Icon(Icons.notifications, color: AppColor.white),
               Icon(Icons.settings, color: AppColor.white),
             ]),
-        body: pages[_page ?? 0]);
+        body: pages[_page ?? 1]);
   }
 }
