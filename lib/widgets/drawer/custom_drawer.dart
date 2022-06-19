@@ -5,7 +5,8 @@ import 'package:get/route_manager.dart';
 import 'package:hospital/widgets/drawer/custom_drawer_header.dart';
 import 'package:hospital/widgets/drawer/custom_drawer_item.dart';
 
-import '../screens/introduction_screen.dart';
+import '../../screens/introduction_screen.dart';
+
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
