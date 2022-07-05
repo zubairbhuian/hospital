@@ -1,9 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital/screens/home_screen.dart';
+import 'package:hospital/screens/notification_screen.dart';
 import 'package:hospital/screens/page2.dart';
 import 'package:hospital/screens/settings.dart';
-import 'package:hospital/screens/services_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
 class MainScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ int? _page;
 final pages = [
   const Page2(),
   const HomeScreen(),
-  const ServicesScreen(),
+  const NotificationScreen(),
   const SettingsScreen(),
 ];
 

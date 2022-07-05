@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:hospital/screens/services_screen.dart';
 import 'package:hospital/widgets/custom_icon_btn.dart';
 import 'package:hospital/widgets/home/home_card.dart';
 import 'package:hospital/widgets/regular_text.dart';
@@ -111,7 +113,7 @@ class HomeScreen extends StatelessWidget {
                     HomeCard(
                         text: 'Services',
                         icon: FontAwesomeIcons.headset,
-                        onTap: () {}),
+                        onTap: () => Get.to(const ServicesScreen())),
                     HomeCard(
                         text: 'Packages',
                         icon: FontAwesomeIcons.stethoscope,

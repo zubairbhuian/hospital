@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:hospital/screens/about_screen.dart';
+import 'package:hospital/screens/contactus_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 import 'package:hospital/widgets/regular_text.dart';
 
@@ -33,7 +36,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           elevation: 0,
           backgroundColor: AppColor.white,
           title: const Text(
-            'Services',
+            'Setttings',
             style: TextStyle(
               color: AppColor.white,
             ),
@@ -118,8 +121,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   fontWeight: FontWeight.w600,
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios,
-                    color: AppColor.green, size: 19.34),
-                onTap: () {},
+                    color: AppColor.green, size: 16),
+                onTap: () => Get.to(const AboutScreen()),
               ),
               ListTile(
                 leading:
@@ -129,8 +132,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   fontWeight: FontWeight.w600,
                 ),
                 trailing: const Icon(Icons.arrow_forward_ios,
-                    color: AppColor.green, size: 19.34),
-                onTap: () {},
+                    color: AppColor.green, size: 16),
+                onTap: () => Get.to(const ContactUsScreen()),
               )
             ],
           ),
