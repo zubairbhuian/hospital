@@ -34,13 +34,20 @@ class AboutScreen extends StatelessWidget {
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
               ),
+              const SizedBox(
+                height: 25,
+              ),
               Text(
                   "Dementia Hospital is a ground breaking initiative to favilitate the next generation of heathcare for USA. At Dementia Hospital we offer an online based doctors appointment service with the facility of an electronic personal health record sysetm. the first of its kind in our country, on both Web and Mobile app Paltform.",
                   style: GoogleFonts.quicksand(
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w500,
                       color: AppColor.grayLite)),
+              const SizedBox(
+                height: 25,
+              ),
               ListTile(
+                contentPadding: const EdgeInsets.all(4),
                 title: const RegularText(
                   text: 'Privacy Policy',
                   fontWeight: FontWeight.w600,
@@ -50,6 +57,8 @@ class AboutScreen extends StatelessWidget {
                 onTap: () {},
               ),
               ListTile(
+                focusColor: Colors.red,
+                contentPadding: const EdgeInsets.all(4),
                 title: const RegularText(
                   text: 'Terms and Conditions',
                   fontWeight: FontWeight.w600,
