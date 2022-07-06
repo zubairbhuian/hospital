@@ -5,7 +5,7 @@
 <img src="screenshots/badges/dart-null_safety-blue.svg" height="28px"/>
 
 # Hospital
-Hellow, This is an Hospital Management applications </br>
+Hellow, This is a Hospital Management applications </br>
 
 
 <img width="200"  src='screenshots/gif/doctor.gif'/>

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/route_manager.dart';
+import 'package:hospital/screens/doctor_profile_screen.dart';
 import 'package:hospital/widgets/regular_text.dart';
 
 import '../utils/app_color.dart';
@@ -208,7 +209,7 @@ class DoctorScreen extends StatelessWidget {
                   ),
                   onPressed: () {},
                 ),
-                onTap: () {},
+                onTap: () => Get.to(const DoctorprofileScreen()),
               ),
             ),
             Padding(
