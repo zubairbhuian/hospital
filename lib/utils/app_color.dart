@@ -9,6 +9,7 @@ class AppColor {
   static const grayLite = Color(0xff8E9195);
   static const black = Color(0xff3C3D3F);
   static const amber = Color(0xffDCE35B);
+  static const yellow = Color.fromARGB(255, 247, 193, 18);
   static const textColorLite = Color(0xffB8B8B8);
   static const textColor = Color(0xff3C3D3F);
   static const borderColor = Color.fromARGB(255, 202, 202, 202);
