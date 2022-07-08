@@ -14,5 +14,8 @@ class AppColor {
   static const textColor = Color(0xff3C3D3F);
   static const borderColor = Color.fromARGB(255, 202, 202, 202);
   static const bgColorOne = Color(0xffE5E5E5);
+  static const liteBG = Color(0xffFAFAFA);
+  static const liteBorder = Color(0xffEAEAEA);
+
 }
 // 45B649
