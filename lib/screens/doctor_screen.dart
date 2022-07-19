@@ -7,6 +7,7 @@ import 'package:hospital/widgets/regular_text.dart';
 
 import '../utils/app_color.dart';
 import '../widgets/drawer/custom_drawer.dart';
+import '../widgets/home/doctor_catagori.dart';
 
 class DoctorScreen extends StatelessWidget {
   const DoctorScreen({Key? key}) : super(key: key);
@@ -76,87 +77,33 @@ class DoctorScreen extends StatelessWidget {
             // !Doctor Catagori
             Row(
               children: [
-                Flexible(
-                  child: Card(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                            width: 1, color: Color(0xffEAEAEA)),
-                        borderRadius: BorderRadius.circular(80)),
-                    color: const Color(0xffFAFAFA),
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(80),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: Row(children: [
-                          const CircleAvatar(
-                            radius: 25,
-                            backgroundColor: AppColor.green,
-                            child: FaIcon(
-                              FontAwesomeIcons.userDoctor,
-                              color: AppColor.white,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              RegularText(
-                                text: "Dementia",
-                                fontWeight: FontWeight.w600,
-                              ),
-                              RegularText(
-                                  text: "Doctor", fontWeight: FontWeight.w600)
-                            ],
-                          )
-                        ]),
-                      ),
-                      onTap: () {},
-                    ),
-                  ),
+                DoctorCatagori(
+                  icon: FontAwesomeIcons.userDoctor,
+                  text1: "Dementia",
+                  text2: "Doctor",
+                  onTap: () {},
                 ),
-                Flexible(
-                  child: Card(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                            width: 1, color: Color(0xffEAEAEA)),
-                        borderRadius: BorderRadius.circular(80)),
-                    color: const Color(0xffFAFAFA),
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(80),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: Row(children: [
-                          const CircleAvatar(
-                            radius: 25,
-                            backgroundColor: AppColor.green,
-                            child: FaIcon(
-                              FontAwesomeIcons.userDoctor,
-                              color: AppColor.white,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              RegularText(
-                                text: "Dementia",
-                                fontWeight: FontWeight.w600,
-                              ),
-                              RegularText(
-                                  text: "Doctor", fontWeight: FontWeight.w600)
-                            ],
-                          )
-                        ]),
-                      ),
-                      onTap: () {},
-                    ),
-                  ),
+                DoctorCatagori(
+                  icon: FontAwesomeIcons.prescriptionBottleMedical,
+                  text1: "Dementia",
+                  text2: "Medicine",
+                  onTap: () {},
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                DoctorCatagori(
+                  icon: FontAwesomeIcons.heartCircleBolt,
+                  text1: "Surgery",
+                  text2: "wise",
+                  onTap: () {},
+                ),
+                DoctorCatagori(
+                  icon: FontAwesomeIcons.userNurse,
+                  text1: "General",
+                  text2: "wise",
+                  onTap: () {},
                 ),
               ],
             ),
