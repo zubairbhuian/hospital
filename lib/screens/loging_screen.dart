@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hospital/models/google_signin_models.dart';
 import 'package:hospital/screens/forget_password_screen.dart';
 
 import 'package:hospital/screens/regestration_screen.dart';
@@ -25,6 +26,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final contoller = Get.put(GoogleSignInContoller());
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _emailControter = TextEditingController();
   final _passwordControter = TextEditingController();
@@ -39,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      backgroundColor:AppColor.bgColorOne,
+      backgroundColor: AppColor.bgColorOne,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
           leading: const SizedBox(height: 10),
@@ -266,7 +268,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             color: Color(0xffDD4B39),
                             size: 17,
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            contoller.login();
+                          }),
                     ],
                   ),
                 ],

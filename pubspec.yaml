@@ -46,6 +46,7 @@ dependencies:
   intl: ^0.17.0
   readmore: ^2.2.0
   card_swiper: ^2.0.4
+  google_sign_in: ^5.4.0
 
 dev_dependencies:
   flutter_test:
