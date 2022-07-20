@@ -267,7 +267,7 @@ class DoctorprofileScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: SizedBox(
-                    height: 185,
+                    height: 190,
                     child: Swiper(
                       itemCount: 3,
                       autoplay: true,
