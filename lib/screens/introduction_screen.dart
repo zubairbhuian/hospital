@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,19 +15,6 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
-  hideStatusBar() {
-    WidgetsFlutterBinding.ensureInitialized();
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: AppColor.green,
-    ));
-  }
-
-  @override
-  void initState() {
-    hideStatusBar();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -71,7 +57,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     ),
                     image: const Image(
                       image: AssetImage(
-                        'images/intro_1.png',
+                        'images/intro_2.png',
                       ),
                     )),
                 PageViewModel(
@@ -95,7 +81,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     ),
                     image: const Image(
                       image: AssetImage(
-                        'images/intro_1.png',
+                        'images/intro_2.png',
                       ),
                     )),
                 PageViewModel(
@@ -119,7 +105,7 @@ class _IntroScreenState extends State<IntroScreen> {
                     ),
                     image: const Image(
                       image: AssetImage(
-                        'images/intro_1.png',
+                        'images/intro_2.png',
                       ),
                     )),
               ],

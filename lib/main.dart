@@ -59,4 +59,3 @@ class AuthControler extends StatelessWidget {
     );
   }
 }
-// IntroScreen()

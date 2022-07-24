@@ -13,33 +13,170 @@ class PopulerService extends StatelessWidget {
           border: Border.all(
             color: AppColor.borderColor,
           )),
-      child: Padding(
-        padding: const EdgeInsets.all(4),
-        child: Center(
-            child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ListTile(
-            contentPadding: const EdgeInsets.all(10),
-            leading: const Image(
-                fit: BoxFit.cover, image: AssetImage('images/service_ps1.png')),
-            title: const RegularText(text: 'Temporary filling'),
-            subtitle: const RegularText(
-              text: "360",
-              fontWeight: FontWeight.w600,
-            ),
-            trailing: OutlinedButton(
-              style: ButtonStyle(
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80)))),
-              child: const Text(
-                'Details',
-                style: TextStyle(color: AppColor.textColor),
+      child: Column(
+        children: [
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  contentPadding: const EdgeInsets.all(5),
+                  leading: const Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/service_ps1.png')),
+                  title: const RegularText(text: 'Temporary filling'),
+                  subtitle: const RegularText(
+                    text: "360",
+                    fontWeight: FontWeight.w600,
+                  ),
+                  trailing: OutlinedButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80)))),
+                    child: const Text(
+                      'Details',
+                      style: TextStyle(color: AppColor.textColor),
+                    ),
+                    onPressed: () {},
+                  ),
+                  onTap: () {},
+                ),
               ),
-              onPressed: () {},
-            ),
-            onTap: () {},
+              const Divider(
+                color: AppColor.textColor,
+                indent: 20,
+                endIndent: 20,
+              )
+            ],
           ),
-        )),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  contentPadding: const EdgeInsets.all(5),
+                  leading: const Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/service_ps1.png')),
+                  title: const RegularText(text: 'Temporary filling'),
+                  subtitle: const RegularText(
+                    text: "360",
+                    fontWeight: FontWeight.w600,
+                  ),
+                  trailing: OutlinedButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80)))),
+                    child: const Text(
+                      'Details',
+                      style: TextStyle(color: AppColor.textColor),
+                    ),
+                    onPressed: () {},
+                  ),
+                  onTap: () {},
+                ),
+              ),
+              const Divider(
+                color: AppColor.textColor,
+                indent: 20,
+                endIndent: 20,
+              )
+            ],
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  contentPadding: const EdgeInsets.all(5),
+                  leading: const Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/service_ps1.png')),
+                  title: const RegularText(text: 'Temporary filling'),
+                  subtitle: const RegularText(
+                    text: "360",
+                    fontWeight: FontWeight.w600,
+                  ),
+                  trailing: OutlinedButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80)))),
+                    child: const Text(
+                      'Details',
+                      style: TextStyle(color: AppColor.textColor),
+                    ),
+                    onPressed: () {},
+                  ),
+                  onTap: () {},
+                ),
+              ),
+              const Divider(
+                color: AppColor.textColor,
+                indent: 20,
+                endIndent: 20,
+              )
+            ],
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  contentPadding: const EdgeInsets.all(5),
+                  leading: const Image(
+                      fit: BoxFit.cover,
+                      image: AssetImage('images/service_ps1.png')),
+                  title: const RegularText(text: 'Temporary filling'),
+                  subtitle: const RegularText(
+                    text: "360",
+                    fontWeight: FontWeight.w600,
+                  ),
+                  trailing: OutlinedButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80)))),
+                    child: const Text(
+                      'Details',
+                      style: TextStyle(color: AppColor.textColor),
+                    ),
+                    onPressed: () {},
+                  ),
+                  onTap: () {},
+                ),
+              ),
+              const Divider(
+                color: AppColor.textColor,
+                indent: 20,
+                endIndent: 20,
+              )
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(5),
+              leading: const Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('images/service_ps1.png')),
+              title: const RegularText(text: 'Temporary filling'),
+              subtitle: const RegularText(
+                text: "360",
+                fontWeight: FontWeight.w600,
+              ),
+              trailing: OutlinedButton(
+                style: ButtonStyle(
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80)))),
+                child: const Text(
+                  'Details',
+                  style: TextStyle(color: AppColor.textColor),
+                ),
+                onPressed: () {},
+              ),
+              onTap: () {},
+            ),
+          ),
+        ],
       ),
     );
   }

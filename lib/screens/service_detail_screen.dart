@@ -145,8 +145,14 @@ class ServiceDetailScreen extends StatelessWidget {
               SizedBox(
                 width: 199.sw,
                 child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(16),
+                        primary: AppColor.green,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80.0))),
                     onPressed: () {},
                     child: const RegularText(
+                      color: AppColor.white,
                       text: 'Learn More',
                     )),
               ),

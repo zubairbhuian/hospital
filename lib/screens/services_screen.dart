@@ -3,6 +3,7 @@ import 'package:get/route_manager.dart';
 import 'package:hospital/widgets/drawer/custom_drawer.dart';
 import 'package:hospital/widgets/regular_text.dart';
 import 'package:hospital/widgets/services/our_services.dart';
+import 'package:hospital/widgets/services/patioent_reviews.dart';
 import 'package:hospital/widgets/services/populer_services.dart';
 
 import '../utils/app_color.dart';
@@ -79,9 +80,7 @@ class ServicesScreen extends StatelessWidget {
               ),
               // ?OurService
               OurServices(),
-              SizedBox(
-                height: 40,
-              ),
+
               Align(
                 alignment: Alignment.topLeft,
                 child: RegularText(
@@ -96,8 +95,10 @@ class ServicesScreen extends StatelessWidget {
                 height: 15,
               ),
               PopulerService(),
+
+              PatientReviews(),
               SizedBox(
-                height: 100,
+                height: 50,
               ),
             ],
           ),

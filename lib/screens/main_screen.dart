@@ -2,7 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital/screens/home_screen.dart';
 import 'package:hospital/screens/notification_screen.dart';
-import 'package:hospital/screens/page2.dart';
+import 'package:hospital/screens/services_screen.dart';
 import 'package:hospital/screens/settings.dart';
 import 'package:hospital/utils/app_color.dart';
 
@@ -15,7 +15,7 @@ class MainScreen extends StatefulWidget {
 
 int? _page;
 final pages = [
-  const Page2(),
+  const ServicesScreen(),
   const HomeScreen(),
   const NotificationScreen(),
   const SettingsScreen(),
@@ -38,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
             },
             items: const [
               Icon(
-                Icons.add_location_alt_outlined,
+                Icons.design_services,
                 color: AppColor.white,
               ),
               Icon(Icons.home, color: AppColor.white),
