@@ -64,7 +64,7 @@ class CustomDrawer extends StatelessWidget {
             title: 'Log Out',
             onTap: () {
               FirebaseAuth.instance.signOut();
-              Get.to(() => const IntroScreen());
+              Get.offAll(() => const IntroScreen());
               // if (FirebaseAuth.instance.currentUser == null) {
 
               // }
