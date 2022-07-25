@@ -7,7 +7,6 @@ import 'package:hospital/widgets/drawer/custom_drawer_item.dart';
 
 import '../../screens/introduction_screen.dart';
 
-
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
     Key? key,
@@ -65,10 +64,10 @@ class CustomDrawer extends StatelessWidget {
             title: 'Log Out',
             onTap: () {
               FirebaseAuth.instance.signOut();
+              Get.to(() => const IntroScreen());
+              // if (FirebaseAuth.instance.currentUser == null) {
 
-              if (FirebaseAuth.instance.currentUser == null) {
-                Get.off(() => const IntroScreen());
-              }
+              // }
             }),
         const SizedBox(
           height: 30,
