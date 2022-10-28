@@ -6,6 +6,8 @@
 
 # Hospital
 Hellow, This is a Hospital Management applications </br>
+## [Download Demo App](https://bhuianfoodapi.herokuapp.com/download/learnquran)
+<br/>
 
 
 <img width="200"  src='screenshots/gif/doctor.gif'/>
