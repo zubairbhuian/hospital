@@ -10,7 +10,19 @@ Hellow, This is a Hospital Management applications </br>
 <br/>
 
 
-<img width="200"  src='screenshots/gif/doctor.gif'/>
+<!-- <img width="200"  src='screenshots/gif/doctor.gif'/> -->
+# App screen
+<p align="center">
+    <img  alt="zubairbhuian's streak" src="./screenshots/2.png"/>
+</p>
+
+<p align="center">
+    <img  alt="zubairbhuian's streak" src="./screenshots/1.png"/>
+</p>
+
+<p align="center">
+    <img  alt="zubairbhuian's streak" src="./screenshots/code.png"/>
+</p>
 
 Designer [Omar Faruk](https://web.facebook.com/omarfarukuiux) </br>
 Developer [Zubair Bhuian](https://web.facebook.com/zubair.bhuian)
