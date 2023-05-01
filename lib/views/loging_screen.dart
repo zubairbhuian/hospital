@@ -1,19 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/screens/forget_password_screen.dart';
 
-import 'package:hospital/screens/regestration_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 
 import '../widgets/auth_btn.dart';
 import '../widgets/custom_appbar_shape.dart';
 import '../widgets/custom_btn.dart';
-import 'main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({
@@ -39,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      backgroundColor:AppColor.bgColorOne,
+      backgroundColor: AppColor.white,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
           leading: const SizedBox(height: 10),
@@ -208,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(color: AppColor.green, fontSize: 15),
                       ),
                       onTap: () {
-                        Get.off(() => const ForgotPasswordScreen());
+                        // Get.off(() => const ForgotPasswordScreen());
                       },
                     ),
                   ),
@@ -216,31 +211,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 20,
                   ),
                   CustomBtn(
-                    onPressed: () async {
-                      if (_formKey.currentState!.validate()) {
-                        try {
-                          showDialog(
-                              context: context,
-                              builder: (contex) => const Center(
-                                    child: CircularProgressIndicator(),
-                                  ));
-                          await FirebaseAuth.instance
-                              .signInWithEmailAndPassword(
-                                  email: _emailControter.text.trim(),
-                                  password: _passwordControter.text.trim());
-                        } on FirebaseAuthException catch (e) {
-                          Get.snackbar(
-                              snackPosition: SnackPosition.BOTTOM,
-                              "Err",
-                              "${e.message}");
-                        }
-                        // navigatorKey.currentState!
-                        //     .popUntil((route) => route.isFirst);
-                      }
-                      if (FirebaseAuth.instance.currentUser!.email != null) {
-                        Get.off(() => const MainScreen());
-                      }
-                    },
+                    onPressed: () async {},
                     title: 'Sign in',
                   ),
                   const SizedBox(
@@ -288,7 +259,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextSpan(
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            Get.off(() => const RegestrationScreen());
+                            // Get.off(() => const RegestrationScreen());
                           },
                         text: ' Create new',
                         style: const TextStyle(

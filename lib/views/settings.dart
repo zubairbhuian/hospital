@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hospital/screens/about_screen.dart';
-import 'package:hospital/screens/contactus_screen.dart';
+import 'package:hospital/views/contactus_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 import 'package:hospital/widgets/regular_text.dart';
+
+import 'about_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);

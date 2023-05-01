@@ -1,17 +1,17 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/screens/loging_screen.dart';
+import 'package:hospital/views/loging_screen.dart';
 import 'package:hospital/utils/app_color.dart';
 import 'package:hospital/widgets/custom_btn.dart';
 
 import '../widgets/auth_btn.dart';
 import '../widgets/custom_appbar_shape.dart';
-import 'main_screen.dart';
+
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({Key? key, required}) : super(key: key);
@@ -241,25 +241,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                 CustomBtn(
                   title: 'Sign Up',
                   onPressed: () async {
-                    if (_formKey.currentState!.validate()) {
-                      // Process data.
-                      try {
-                        await FirebaseAuth.instance
-                            .createUserWithEmailAndPassword(
-                                email: _emailControter.text.trim(),
-                                password: _passwordControter.text.trim());
-                      } on FirebaseAuthException catch (e) {
-                        print(e);
-                        // CustromSnackber.showSnackber(e.message);
-                        Get.snackbar(
-                            snackPosition: SnackPosition.BOTTOM,
-                            'err',
-                            "${e.message}");
-                      }
-                    }
-                    if (FirebaseAuth.instance.currentUser!.email != null) {
-                      Get.off(() => const MainScreen());
-                    }
+                    
                   },
                 ),
                 const SizedBox(
@@ -306,7 +288,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   TextSpan(
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          Get.off(() => const LoginScreen());
+                          // Get.off(() => const LoginScreen());
                         },
                       text: 'Log in',
                       style: const TextStyle(color: AppColor.green))

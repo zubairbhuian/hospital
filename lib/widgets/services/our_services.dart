@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:hospital/models/service_data.dart';
-import 'package:hospital/screens/service_detail_screen.dart';
+
 
 import '../../utils/app_color.dart';
 import '../regular_text.dart';
@@ -49,7 +48,7 @@ class OurServices extends StatelessWidget {
               ),
             ),
           ),
-          onTap: () => Get.to(const ServiceDetailScreen()),
+          // onTap: () => Get.to(const ServiceDetailScreen()),
         ),
       ),
     );
