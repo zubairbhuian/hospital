@@ -1,8 +1,9 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:hospital/store/storage.dart';
+import 'package:hospital/store%20copy/storage.dart';
 
+import '../models/user.dart';
 import '../utils/app_constant.dart';
 
 class UserStore extends GetxController {

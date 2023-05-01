@@ -2,50 +2,50 @@
 import 'dart:convert';
 
 
-class UserData {
-  final String? id;
-  final String? name;
-  final String? email;
-  final String? photourl;
-  final String? location;
-  final String? fcmtoken;
-  final Timestamp? addtime;
-  UserData({
-    this.id,
-    this.name,
-    this.email,
-    this.photourl,
-    this.location,
-    this.fcmtoken,
-    this.addtime,
-  });
-  factory UserData.fromFirestore(
-      DocumentSnapshot<Map<String, dynamic>> snapshot,
-      SnapshotOptions? options) {
-    final data = snapshot.data();
-    return UserData(
-      id: data?['id'],
-      name: data?['name'],
-      email: data?['email'],
-      photourl: data?['photourl'],
-      location: data?['location'],
-      fcmtoken: data?['fcmtoken'],
-      addtime: data?['addtime'],
-    );
-  }
+// class UserData {
+//   final String? id;
+//   final String? name;
+//   final String? email;
+//   final String? photourl;
+//   final String? location;
+//   final String? fcmtoken;
+//   final Timestamp? addtime;
+//   UserData({
+//     this.id,
+//     this.name,
+//     this.email,
+//     this.photourl,
+//     this.location,
+//     this.fcmtoken,
+//     this.addtime,
+//   });
+//   factory UserData.fromFirestore(
+//       DocumentSnapshot<Map<String, dynamic>> snapshot,
+//       SnapshotOptions? options) {
+//     final data = snapshot.data();
+//     return UserData(
+//       id: data?['id'],
+//       name: data?['name'],
+//       email: data?['email'],
+//       photourl: data?['photourl'],
+//       location: data?['location'],
+//       fcmtoken: data?['fcmtoken'],
+//       addtime: data?['addtime'],
+//     );
+//   }
 
-  Map<String, dynamic> toFirestore() {
-    return {
-      if (id != null) "id": id,
-      if (name != null) "name": name,
-      if (email != null) "email": email,
-      if (id != null) "photourl": photourl,
-      if (id != null) "location": location,
-      if (id != null) "fcmtoken": fcmtoken,
-      if (id != null) "addtime": addtime,
-    };
-  }
-}
+//   Map<String, dynamic> toFirestore() {
+//     return {
+//       if (id != null) "id": id,
+//       if (name != null) "name": name,
+//       if (email != null) "email": email,
+//       if (id != null) "photourl": photourl,
+//       if (id != null) "location": location,
+//       if (id != null) "fcmtoken": fcmtoken,
+//       if (id != null) "addtime": addtime,
+//     };
+//   }
+// }
 
 class UserLoginResponseEntity {
   String? accessToken;
