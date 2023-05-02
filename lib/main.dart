@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:hospital/routes/pages.dart';
 import 'package:hospital/views/intro/introduction_screen.dart';
 
 main() {
@@ -19,20 +20,13 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: ((context, child) => GetMaterialApp(
-            navigatorKey: navigatorKey,
+            initialRoute: AppPages.INITIAL,
+            getPages: AppPages.routes,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.green,
             ),
-            home: const AuthControler())));
+            )));
   }
 }
 
-class AuthControler extends StatelessWidget {
-  const AuthControler({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: IntroScreen());
-  }
-}

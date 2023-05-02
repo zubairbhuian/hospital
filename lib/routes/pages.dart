@@ -1,7 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
-import 'package:hospital/views/loging_screen.dart';
+import 'package:hospital/bindings/intro_binding.dart';
+import 'package:hospital/views/intro/introduction_screen.dart';
 
 import 'app_routes.dart';
 
@@ -11,6 +12,8 @@ class AppPages {
   static const Application = AppRoutes.Application;
 
   static List<GetPage> routes = [
-    GetPage(name: INITIAL, page: () => const LoginScreen())
+    GetPage(name: INITIAL, 
+    page: () => const IntroScreen(),
+    binding: IntroBinding())
   ];
 }
