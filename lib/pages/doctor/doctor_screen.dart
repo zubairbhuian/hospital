@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/route_manager.dart';
-import 'package:hospital/screens/doctor_profile_screen.dart';
-import 'package:hospital/widgets/regular_text.dart';
 
-import '../utils/app_color.dart';
-import '../widgets/drawer/custom_drawer.dart';
-import '../widgets/home/doctor_catagori.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/drawer/custom_drawer.dart';
+import '../../common/widgets/home/doctor_catagori.dart';
+import '../../common/widgets/regular_text.dart';
+import '../doctor_profile/view.dart';
 
 class DoctorScreen extends StatelessWidget {
   const DoctorScreen({Key? key}) : super(key: key);
@@ -146,7 +146,7 @@ class DoctorScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.only(
                           left: 22.5.h, right: 22.5.h, bottom: 0, top: 0),
-                      primary: const Color(0xffFAFAFA),
+                      backgroundColor: const Color(0xffFAFAFA),
                       side:
                           const BorderSide(width: 1, color: Color(0xffEAEAEA)),
                       shape: RoundedRectangleBorder(
@@ -196,7 +196,7 @@ class DoctorScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.only(
                           left: 22.5.h, right: 22.5.h, bottom: 0, top: 0),
-                      primary: const Color(0xffFAFAFA),
+                      backgroundColor: const Color(0xffFAFAFA),
                       side:
                           const BorderSide(width: 1, color: Color(0xffEAEAEA)),
                       shape: RoundedRectangleBorder(

@@ -1,13 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/screens/loging_screen.dart';
-import 'package:hospital/widgets/custom_btn.dart';
 
-import '../utils/app_color.dart';
-import '../widgets/custom_appbar_shape.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/custom_appbar_shape.dart';
+import '../../common/widgets/custom_btn.dart';
+import '../login/index.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
@@ -128,30 +127,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         CustomBtn(
                           title: 'Reset Password',
                           onPressed: () async {
-                            if (_formKey.currentState!.validate()) {
-                              try {
-                                showDialog(
-                                    context: context,
-                                    builder: (contex) => const Center(
-                                          child: CircularProgressIndicator(),
-                                        ));
-
-                                await FirebaseAuth.instance
-                                    .sendPasswordResetEmail(
-                                        email: _emailControter.text.trim());
-                                Get.snackbar(
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    "Err",
-                                    "Password Reset Email Send");
-                                // ignore: use_build_context_synchronously
-                                Navigator.of(context)
-                                    .popUntil((route) => route.isFirst);
-                              } on FirebaseAuthException catch (e) {
-                                Get.snackbar("Err", "${e.message}",
-                                    snackPosition: SnackPosition.BOTTOM);
-                                Navigator.of(context).pop();
-                              }
-                            }
+                           
                           },
                         ),
                         const SizedBox(

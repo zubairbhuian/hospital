@@ -4,11 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:hospital/utils/app_color.dart';
-
-import '../../widgets/auth_btn.dart';
-import '../../widgets/custom_appbar_shape.dart';
-import '../../widgets/custom_btn.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/auth_btn.dart';
+import '../../common/widgets/custom_appbar_shape.dart';
+import '../../common/widgets/custom_btn.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({

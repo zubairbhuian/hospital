@@ -1,10 +1,13 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:hospital/screens/home_screen.dart';
-import 'package:hospital/screens/notification_screen.dart';
-import 'package:hospital/screens/services_screen.dart';
-import 'package:hospital/screens/settings.dart';
-import 'package:hospital/utils/app_color.dart';
+
+import '../../common/utils/app_color.dart';
+import '../home/home_screen.dart';
+
+import '../notification/index.dart';
+import '../service/services_screen.dart';
+import '../settings/index.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

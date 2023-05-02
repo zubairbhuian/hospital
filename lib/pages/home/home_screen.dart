@@ -1,16 +1,16 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hospital/screens/doctor_screen.dart';
-import 'package:hospital/screens/services_screen.dart';
-import 'package:hospital/widgets/custom_icon_btn.dart';
-import 'package:hospital/widgets/home/home_card.dart';
-import 'package:hospital/widgets/regular_text.dart';
 
-import '../utils/app_color.dart';
-import '../widgets/drawer/custom_drawer.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/custom_icon_btn.dart';
+import '../../common/widgets/drawer/custom_drawer.dart';
+import '../../common/widgets/home/home_card.dart';
+import '../../common/widgets/regular_text.dart';
+import '../doctor/doctor_screen.dart';
+import '../service/services_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           title: Text(
-            FirebaseAuth.instance.currentUser?.displayName ?? 'Zubair Bhuian',
+             'Zubair Bhuian',
             style: const TextStyle(
               color: AppColor.textColor,
             ),

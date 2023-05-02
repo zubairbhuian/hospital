@@ -4,11 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/widgets/big_text.dart';
-import 'package:hospital/widgets/regular_text.dart';
+
 import 'package:readmore/readmore.dart';
 
-import '../../utils/app_color.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/big_text.dart';
+import '../../common/widgets/regular_text.dart';
+
 
 class DoctorprofileScreen extends StatelessWidget {
   const DoctorprofileScreen({Key? key}) : super(key: key);

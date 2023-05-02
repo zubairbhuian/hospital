@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/widgets/regular_text.dart';
 
-import '../../utils/app_color.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/regular_text.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({Key? key}) : super(key: key);

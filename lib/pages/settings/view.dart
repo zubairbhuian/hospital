@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hospital/pages/contact/view.dart';
-import 'package:hospital/utils/app_color.dart';
-import 'package:hospital/widgets/regular_text.dart';
 
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/regular_text.dart';
 import '../about/view.dart';
 
 class SettingsScreen extends StatefulWidget {

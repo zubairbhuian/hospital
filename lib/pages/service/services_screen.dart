@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:hospital/widgets/drawer/custom_drawer.dart';
-import 'package:hospital/widgets/regular_text.dart';
-import 'package:hospital/widgets/services/our_services.dart';
-import 'package:hospital/widgets/services/patioent_reviews.dart';
-import 'package:hospital/widgets/services/populer_services.dart';
 
-import '../utils/app_color.dart';
+
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/drawer/custom_drawer.dart';
+import '../../common/widgets/regular_text.dart';
+import '../../common/widgets/services/our_services.dart';
+import '../../common/widgets/services/patioent_reviews.dart';
+import '../../common/widgets/services/populer_services.dart';
+
 
 class ServicesScreen extends StatelessWidget {
   const ServicesScreen({Key? key}) : super(key: key);

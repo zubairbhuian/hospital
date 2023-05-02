@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:hospital/widgets/regular_text.dart';
 
-import '../utils/app_color.dart';
-import '../widgets/drawer/custom_drawer.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/drawer/custom_drawer.dart';
+import '../../common/widgets/regular_text.dart';
+
 
 class ServiceDetailScreen extends StatelessWidget {
   const ServiceDetailScreen({Key? key}) : super(key: key);

@@ -5,12 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/pages/loging/view.dart';
+
 import 'package:hospital/common/utils/app_color.dart';
 import 'package:hospital/common/widgets/custom_btn.dart';
 
 import '../../common/widgets/auth_btn.dart';
 import '../../common/widgets/custom_appbar_shape.dart';
+import '../login/view.dart';
 
 
 class UserInfoScreen extends StatefulWidget {

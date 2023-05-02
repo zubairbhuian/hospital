@@ -5,13 +5,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/utils/app_color.dart';
-import 'package:hospital/widgets/custom_btn.dart';
+
 import 'package:intl/intl.dart';
 
-import '../../widgets/auth_btn.dart';
-import '../../widgets/custom_appbar_shape.dart';
-import '../loging/view.dart';
+import '../../common/utils/app_color.dart';
+import '../../common/widgets/auth_btn.dart';
+import '../../common/widgets/custom_appbar_shape.dart';
+import '../../common/widgets/custom_btn.dart';
+import '../login/view.dart';
+
 
 class RegestrationScreen extends StatefulWidget {
   const RegestrationScreen({Key? key, required}) : super(key: key);
