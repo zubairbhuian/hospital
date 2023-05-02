@@ -1,10 +1,11 @@
 import 'package:get/get.dart';
-import 'package:hospital/pages/intro/controller.dart';
+import 'package:hospital/pages/login/index.dart';
+
 
 class LogInBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => IntroController());
+    Get.lazyPut(() => LogInController());
     // TODO: implement dependencies
   }
 }

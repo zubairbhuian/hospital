@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: ((context, child) => GetMaterialApp(
-              initialRoute: AppPages.INITIAL,
+              initialRoute: AppPages.SIGN_IN,
               getPages: AppPages.routes,
               debugShowCheckedModeBanner: false,
               theme: ThemeData(

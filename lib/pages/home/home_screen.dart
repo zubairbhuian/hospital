@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 
 import '../../common/utils/app_color.dart';
 import '../../common/widgets/custom_icon_btn.dart';
+import '../../common/widgets/custom_text.dart';
 import '../../common/widgets/drawer/custom_drawer.dart';
 import '../../common/widgets/home/home_card.dart';
-import '../../common/widgets/regular_text.dart';
 import '../doctor/doctor_screen.dart';
 import '../service/services_screen.dart';
 

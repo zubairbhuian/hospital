@@ -3,8 +3,8 @@ import 'package:get/route_manager.dart';
 
 
 import '../../common/utils/app_color.dart';
+import '../../common/widgets/custom_text.dart';
 import '../../common/widgets/drawer/custom_drawer.dart';
-import '../../common/widgets/regular_text.dart';
 import '../../common/widgets/services/our_services.dart';
 import '../../common/widgets/services/patioent_reviews.dart';
 import '../../common/widgets/services/populer_services.dart';

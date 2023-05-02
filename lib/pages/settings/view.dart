@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:hospital/pages/contact/view.dart';
 
 import '../../common/utils/app_color.dart';
-import '../../common/widgets/regular_text.dart';
+import '../../common/widgets/custom_text.dart';
 import '../about/view.dart';
 
 class SettingsScreen extends StatefulWidget {

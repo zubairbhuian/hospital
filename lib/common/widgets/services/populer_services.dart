@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hospital/common/utils/app_color.dart';
-import 'package:hospital/common/widgets/regular_text.dart';
+
+import '../custom_text.dart';
 
 class PopulerService extends StatelessWidget {
   const PopulerService({Key? key}) : super(key: key);

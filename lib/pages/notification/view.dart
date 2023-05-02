@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hospital/common/widgets/regular_text.dart';
 
 import '../../common/utils/app_color.dart';
+import '../../common/widgets/custom_text.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({Key? key}) : super(key: key);

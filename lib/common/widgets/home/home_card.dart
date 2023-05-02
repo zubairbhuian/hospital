@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../utils/app_color.dart';
-import '../regular_text.dart';
+import '../custom_text.dart';
 
 class HomeCard extends StatelessWidget {
   final String text;

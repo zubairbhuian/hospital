@@ -4,9 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/route_manager.dart';
 
 import '../../common/utils/app_color.dart';
+import '../../common/widgets/custom_text.dart';
 import '../../common/widgets/drawer/custom_drawer.dart';
 import '../../common/widgets/home/doctor_catagori.dart';
-import '../../common/widgets/regular_text.dart';
 import '../doctor_profile/view.dart';
 
 class DoctorScreen extends StatelessWidget {

@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../common/utils/app_color.dart';
-import '../../common/widgets/regular_text.dart';
+import '../../common/widgets/custom_text.dart';
+
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({Key? key}) : super(key: key);

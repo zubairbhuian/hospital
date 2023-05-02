@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hospital/common/widgets/regular_text.dart';
+import 'package:hospital/common/widgets/custom_text.dart';
+
 
 import '../../utils/app_color.dart';
 

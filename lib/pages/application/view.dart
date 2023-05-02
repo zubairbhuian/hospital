@@ -9,12 +9,15 @@ import '../service/services_screen.dart';
 import '../settings/index.dart';
 
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class ApplicationScreen extends StatelessWidget {
+ 
 
+
+
+
+ const ApplicationScreen({super.key});
   @override
-  State<MainScreen> createState() => _MainScreenState();
-}
+  Widget build(BuildContext context) {
 
 int? _page;
 final pages = [
@@ -23,10 +26,6 @@ final pages = [
   const NotificationScreen(),
   const SettingsScreen(),
 ];
-
-class _MainScreenState extends State<MainScreen> {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
         extendBody: true,
         bottomNavigationBar: CurvedNavigationBar(
@@ -37,7 +36,6 @@ class _MainScreenState extends State<MainScreen> {
             animationCurve: Curves.easeInOut,
             animationDuration: const Duration(milliseconds: 600),
             onTap: (index) {
-              setState(() => _page = index);
             },
             items: const [
               Icon(

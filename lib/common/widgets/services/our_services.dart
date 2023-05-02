@@ -3,7 +3,8 @@ import 'package:hospital/common/models/service_data.dart';
 
 
 import '../../utils/app_color.dart';
-import '../regular_text.dart';
+import '../custom_text.dart';
+
 
 class OurServices extends StatelessWidget {
   const OurServices({Key? key}) : super(key: key);
