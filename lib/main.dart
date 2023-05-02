@@ -1,15 +1,13 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:hospital/views/intro/introduction_screen.dart';
 
-import 'package:hospital/views/loging_screen.dart';
-
-
-main()  {
+main() {
   runApp(const MyApp());
 }
+
 final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
@@ -35,8 +33,6 @@ class AuthControler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body:LoginScreen()
-    );
+    return const Scaffold(body: IntroScreen());
   }
 }

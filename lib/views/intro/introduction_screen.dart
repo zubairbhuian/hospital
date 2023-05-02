@@ -6,7 +6,7 @@ import 'package:hospital/utils/app_color.dart';
 import 'package:hospital/widgets/custom_btn.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'loging_screen.dart';
+import '../loging_screen.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({Key? key}) : super(key: key);
