@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/common/widgets/custom_text.dart';
+import 'package:hospital/common/widgets/custom_text_field.dart';
 
 import 'package:intl/intl.dart';
 
@@ -82,27 +83,12 @@ class ReRegestrationScreen extends GetWidget<ReRegestrationController> {
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w500,
                         )),
-                    TextFormField(
-                      style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: AppColor.textColor)),
+                    CustomTextField(
                       controller: controller.nameControter,
                       keyboardType: TextInputType.name,
-                      decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(
-                              bottom: 15.5, top: 15.5, left: 28, right: 28),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(80)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          hintText: ' Type Name',
-                          hintStyle: TextStyle(
-                              color: AppColor.textColorLite, fontSize: 14)),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      hintText: ' Type Name',
+                      padding:  EdgeInsets.only(
+                          bottom: 15.5, top: 15.5, left: 25.w, right: 25.w),
                       validator: (String? value) {
                         if (value!.isEmpty ||
                             !RegExp(r"^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)")
@@ -112,37 +98,23 @@ class ReRegestrationScreen extends GetWidget<ReRegestrationController> {
                         return null;
                       },
                     ),
+
                     Container(
-                      alignment: AlignmentDirectional.topStart,
-                      margin: const EdgeInsets.only(bottom: 5, top: 20),
-                      child: RegularText(
+                        alignment: AlignmentDirectional.topStart,
+                        margin: const EdgeInsets.only(bottom: 5, top: 20),
+                        child: RegularText(
                           text: 'Phone',
                           color: const Color(0xff8E9195),
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w500,
-                        )
-                    ),
-                    TextFormField(
-                      style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: AppColor.textColor)),
+                        )),
+
+                    CustomTextField(
                       controller: controller.phoneControter,
                       keyboardType: TextInputType.phone,
-                      decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(
-                              bottom: 15.5, top: 15.5, left: 28, right: 28),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(80)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          hintText: 'Type Phone',
-                          hintStyle: TextStyle(
-                              color: AppColor.textColorLite, fontSize: 14)),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      hintText: 'Type Phone',
+                      padding:  EdgeInsets.only(
+                          bottom: 15.5, top: 15.5, left: 25.w, right: 25.w),
                       validator: (String? value) {
                         if (value!.isEmpty ||
                             !RegExp(r'^(?:[+0]9)?[0-9]{10}$').hasMatch(value)) {
@@ -151,192 +123,128 @@ class ReRegestrationScreen extends GetWidget<ReRegestrationController> {
                         return null;
                       },
                     ),
+
                     Container(
-                      alignment: AlignmentDirectional.topStart,
-                      margin: const EdgeInsets.only(bottom: 5, top: 20),
-                      child: RegularText(
+                        alignment: AlignmentDirectional.topStart,
+                        margin: const EdgeInsets.only(bottom: 5, top: 20),
+                        child: RegularText(
                           text: 'Weight',
                           color: const Color(0xff8E9195),
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w500,
-                        )
-                    ),
-                    TextFormField(
-                      style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: AppColor.textColor)),
+                        )),
+                    CustomTextField(
                       controller: controller.weightControter,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                          contentPadding: EdgeInsets.only(
-                              bottom: 15.5, top: 15.5, left: 28, right: 28),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(80)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          hintText: ' Type Your Weight',
-                          hintStyle: TextStyle(
-                              color: AppColor.textColorLite, fontSize: 14)),
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      keyboardType: TextInputType.number,
+                      padding:  EdgeInsets.only(
+                          bottom: 15.5, top: 15.5, left: 25.w, right: 25.w),
+                      hintText: ' Type Your Weight',
                       validator: (String? value) {
                         if (value!.isEmpty ||
-                            !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
-                                .hasMatch(value)) {
+                            !RegExp(r'^0\d+').hasMatch(value)) {
                           return 'Enter your valid Your Weight';
                         }
                         return null;
                       },
                     ),
+
                     // !Blood Group
                     Container(
-                      alignment: AlignmentDirectional.topStart,
-                      margin: const EdgeInsets.only(bottom: 5, top: 20),
-                      child: RegularText(
+                        alignment: AlignmentDirectional.topStart,
+                        margin: const EdgeInsets.only(bottom: 5, top: 20),
+                        child: RegularText(
                           text: 'Blood Group',
                           color: const Color(0xff8E9195),
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w500,
-                        )
-                    ),
-                    TextFormField(
+                        )),
+
+                    CustomTextField(
                       controller: controller.bloodGroupControter,
                       readOnly: true,
-                      style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: AppColor.textColor)),
-                      decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.only(
-                              bottom: 15.5, top: 15.5, left: 28, right: 28),
-                          border: const OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(80)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          hintText: "Select Your Group",
-                          suffixIcon: Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: DropdownButton<String>(
-                              items: controller.blooodGroup.map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                  onTap: () {
-                                    controller.bloodGroupControter.text = value;
-                                    controller.update();
-                                  },
-                                );
-                              }).toList(),
-                              onChanged: (_) {},
-                            ),
-                          )),
+                      hintText: "Select Your Group",
+                      padding:  EdgeInsets.only(
+                          bottom: 15.5, top: 15.5, left: 25.w, right: 25.w),
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.only(right: 15),
+                        child: DropdownButton<String>(
+                          items: controller.blooodGroup.map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                              onTap: () {
+                                controller.bloodGroupControter.text = value;
+                                controller.update();
+                              },
+                            );
+                          }).toList(),
+                          onChanged: (_) {},
+                        ),
+                      ),
                       validator: (String? value) {
-                        if (value!.isEmpty ||
-                            !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
-                                .hasMatch(value)) {
-                          return 'Enter your valid your Blood Group';
+                        if (value!.isEmpty) {
+                          return 'Enter Blood Group';
                         }
                         return null;
                       },
                     ),
+
                     // Gender
                     Container(
-                      alignment: AlignmentDirectional.topStart,
-                      margin: const EdgeInsets.only(bottom: 5, top: 20),
-                      child: RegularText(
+                        alignment: AlignmentDirectional.topStart,
+                        margin: const EdgeInsets.only(bottom: 5, top: 20),
+                        child: RegularText(
                           text: 'Gender',
                           color: const Color(0xff8E9195),
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w500,
-                        )
-                    ),
-                    TextFormField(
+                        )),
+                    CustomTextField(
                       controller: controller.genderControter,
                       readOnly: true,
-                      style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: AppColor.textColor)),
-                      decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.only(
-                              bottom: 15.5, top: 15.5, left: 28, right: 28),
-                          border: const OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(80)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          hintText: "Select Your Gender",
-                          suffixIcon: Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: DropdownButton<String>(
-                              items: controller.gender.map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(value),
-                                  onTap: () {
-                                    controller.genderControter.text = value;
-                                    controller.update();
-                                  },
-                                );
-                              }).toList(),
-                              onChanged: (_) {},
-                            ),
-                          )),
+                      hintText: "Select Your Gender",
+                      padding:  EdgeInsets.only(
+                          bottom: 15.5, top: 15.5, left: 25.w, right: 25.w),
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.only(right: 15),
+                        child: DropdownButton<String>(
+                          items: controller.gender.map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                              onTap: () {
+                                controller.genderControter.text = value;
+                                controller.update();
+                              },
+                            );
+                          }).toList(),
+                          onChanged: (_) {},
+                        ),
+                      ),
                       validator: (String? value) {
-                        if (value!.isEmpty ||
-                            !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w]{2,4}')
-                                .hasMatch(value)) {
+                        if (value!.isEmpty) {
                           return 'Enter your valid your Gender';
                         }
                         return null;
                       },
                     ),
+
                     Container(
-                      alignment: AlignmentDirectional.topStart,
-                      margin: const EdgeInsets.only(bottom: 5, top: 20),
-                      child: RegularText(
+                        alignment: AlignmentDirectional.topStart,
+                        margin: const EdgeInsets.only(bottom: 5, top: 20),
+                        child: RegularText(
                           text: 'Date of Birth',
                           color: const Color(0xff8E9195),
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w500,
-                        )
-                    ),
-                    TextFormField(
+                        )),
+                    CustomTextField(
                       controller: controller.dateOfBirthControter,
                       keyboardType: TextInputType.emailAddress,
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      decoration: const InputDecoration(
-                          suffixIcon: Icon(Icons.calendar_month),
-                          contentPadding: EdgeInsets.only(
-                              bottom: 15.5, top: 15.5, left: 28, right: 28),
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(80)),
-                              borderSide:
-                                  BorderSide(color: AppColor.borderColor)),
-                          hintText: ' YYYY/MM/DD',
-                          hintStyle: TextStyle(
-                              color: AppColor.textColorLite, fontSize: 14)),
-                      style: GoogleFonts.inter(
-                          textStyle: const TextStyle(
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15,
-                              color: AppColor.textColor)),
-                      // validator: (String? value) {
-                      //   if (value!.isEmpty) {
-                      //     return 'Enter your BrithDay';
-                      //   }
-                      //   return null;
-                      // },
+                      hintText: ' YYYY/MM/DD',
+                      padding:  EdgeInsets.only(
+                          bottom: 15.5, top: 15.5, left: 25.w, right: 25.w),
+                      suffixIcon: const Icon(Icons.calendar_month),
                       onTap: () async {
                         DateTime? pickedDate = await showDatePicker(
                             context: context,
@@ -355,7 +263,11 @@ class ReRegestrationScreen extends GetWidget<ReRegestrationController> {
                     ),
                     CustomBtn(
                       title: 'Regester',
-                      onPressed: () async {},
+                      onPressed: () async {
+                        if (controller.formKey.currentState!.validate()) {
+                          //  Process data.
+                        }
+                      },
                     ),
                   ],
                 ),
