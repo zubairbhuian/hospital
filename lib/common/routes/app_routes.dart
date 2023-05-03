@@ -3,6 +3,8 @@
 class AppRoutes {
   static const INITIAL = "/";
   static const SIGN_IN = "/sign_in";
+  static const FORGET_PASS= "/forget_pass";
+  static const REGESTATION= "/regestation";
   static const NOT_FOUND = "/not_Found";
 
   static const Application = "/application";

@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 import 'package:get/get.dart';
+import 'package:hospital/pages/forget_pass/index.dart';
+import 'package:hospital/pages/regestration/index.dart';
 
 import '../../pages/application/index.dart';
 import '../../pages/intro/index.dart';
@@ -24,5 +26,13 @@ class AppPages {
         name: APPLICATION,
         page: () => const ApplicationScreen(),
         binding: ApplicationBinding()),
+    GetPage(
+        name:AppRoutes.REGESTATION,
+        page: () => const RegestrationScreen(),
+        binding: RegestrationBinding()),
+     GetPage(
+        name:AppRoutes.FORGET_PASS,
+        page: () => const ForgotPasswordScreen(),
+        binding: ForgotPasswordBinding()),
   ];
 }

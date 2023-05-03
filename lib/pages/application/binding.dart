@@ -11,6 +11,5 @@ class ApplicationBinding implements Bindings {
     Get.lazyPut(() => ServiceController());
     Get.lazyPut(() => NotificationController());
     Get.lazyPut(() => SettingsController());
-    // TODO: implement dependencies
   }
 }

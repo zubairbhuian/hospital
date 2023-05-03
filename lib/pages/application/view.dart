@@ -4,23 +4,12 @@ import 'package:get/get.dart';
 import 'package:hospital/pages/application/index.dart';
 
 import '../../common/utils/app_color.dart';
-import '../home/home_screen.dart';
-
-import '../notification/index.dart';
-import '../service/services_screen.dart';
-import '../settings/index.dart';
 
 class ApplicationScreen extends StatelessWidget {
   const ApplicationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final pages = [
-      const ServicesScreen(),
-      const HomeScreen(),
-      const NotificationScreen(),
-      const SettingsScreen(),
-    ];
     return GetBuilder<ApplicationController>(
         builder: (controller) => Scaffold(
             extendBody: true,
@@ -44,9 +33,6 @@ class ApplicationScreen extends StatelessWidget {
                   Icon(Icons.notifications, color: AppColor.white),
                   Icon(Icons.settings, color: AppColor.white),
                 ]),
-            body: pages[controller.pageIndex ?? 1]));
-            
+            body: controller.pages[controller.pageIndex ?? 1]));
   }
-
-  
 }
