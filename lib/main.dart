@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: ((context, child) => GetMaterialApp(
-              initialRoute: AppRoutes.REGESTATION,
+              initialRoute: AppRoutes.RE_REGESTATION,
               getPages: AppPages.routes,
               debugShowCheckedModeBanner: false,
               theme: ThemeData(

@@ -5,6 +5,7 @@ class AppRoutes {
   static const SIGN_IN = "/sign_in";
   static const FORGET_PASS= "/forget_pass";
   static const REGESTATION= "/regestation";
+  static const RE_REGESTATION= "/re_regestation";
   static const NOT_FOUND = "/not_Found";
 
   static const Application = "/application";

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:hospital/pages/regestration/index.dart';
+
+import 'controller.dart';
 
 class RegestrationBinding implements Bindings {
   @override

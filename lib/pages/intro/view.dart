@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hospital/common/routes/app_routes.dart';
 import 'package:hospital/common/utils/app_color.dart';
-import 'package:hospital/pages/login/index.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 import 'index.dart';
@@ -23,9 +23,8 @@ class IntroScreen extends GetWidget<IntroController> {
               done: const Text("Next"),
               back: const Text("Previous"),
               onDone: () {
-                Get.off(const LoginScreen());
+                Get.offAllNamed(AppRoutes.Application);
               },
-              onSkip: () {},
               showBackButton: true,
               showNextButton: true,
               showDoneButton: true,

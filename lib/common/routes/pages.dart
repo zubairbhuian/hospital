@@ -6,6 +6,7 @@ import 'package:hospital/pages/regestration/index.dart';
 import '../../pages/application/index.dart';
 import '../../pages/intro/index.dart';
 import '../../pages/login/index.dart';
+import '../../pages/re_regestation/index.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -29,7 +30,11 @@ class AppPages {
     GetPage(
         name:AppRoutes.REGESTATION,
         page: () => const RegestrationScreen(),
-        binding: RegestrationBinding()),
+        binding: RegestrationBinding()),   
+    GetPage(
+        name:AppRoutes.RE_REGESTATION,
+        page: () => const ReRegestrationScreen(),
+        binding: ReRegestrationBinding()),
      GetPage(
         name:AppRoutes.FORGET_PASS,
         page: () => const ForgotPasswordScreen(),
