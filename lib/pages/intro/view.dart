@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/common/routes/app_routes.dart';
+import 'package:hospital/common/store/config.dart';
 import 'package:hospital/common/utils/app_color.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -23,6 +24,7 @@ class IntroScreen extends GetWidget<IntroController> {
               done: const Text("Next"),
               back: const Text("Previous"),
               onDone: () {
+                ConfigStore.to.saveAlreadyOpen();
                 Get.offAllNamed(AppRoutes.Application);
               },
               showBackButton: true,

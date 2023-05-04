@@ -1,5 +1,6 @@
 // ignore_for_file: constant_identifier_names
 import 'package:get/get.dart';
+import 'package:hospital/common/middlewares/router_welcome.dart';
 import 'package:hospital/pages/forget_pass/index.dart';
 import 'package:hospital/pages/regestration/index.dart';
 
@@ -18,7 +19,9 @@ class AppPages {
     GetPage(
         name: INITIAL,
         page: () => const IntroScreen(),
-        binding: IntroBinding()),
+        binding: IntroBinding(),
+        middlewares:[ RouteWlcomMiddleware(priority: 1)]
+        ),
     GetPage(
         name: SIGN_IN,
         page: () => const LoginScreen(),

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,7 +6,16 @@ import 'package:get/get.dart';
 import 'package:hospital/common/routes/app_routes.dart';
 import 'package:hospital/common/routes/pages.dart';
 
-main() {
+import 'common/store/config.dart';
+import 'common/store/storage.dart';
+import 'common/store/user.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await Get.putAsync<StorageService>(() => StorageService().init());
+  Get.put<ConfigStore>(ConfigStore());
+  Get.put<UserStore>(UserStore());
   runApp(const MyApp());
 }
 
@@ -20,7 +30,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: ((context, child) => GetMaterialApp(
-              initialRoute: AppRoutes.REGESTATION,
+              initialRoute: AppRoutes.INITIAL,
               getPages: AppPages.routes,
               debugShowCheckedModeBanner: false,
               theme: ThemeData(

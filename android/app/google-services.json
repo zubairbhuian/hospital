@@ -37,6 +37,13 @@
             {
               "client_id": "567786317416-m0o33p1df7r3rlviktoeukl15fkn3oh6.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "567786317416-b4ifdqoe78sr3ffjg892lbblq60gidnb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hospitall"
+              }
             }
           ]
         }

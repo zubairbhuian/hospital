@@ -44,6 +44,11 @@ dependencies:
   readmore: ^2.2.0
   card_swiper: ^2.0.4
   shared_preferences: ^2.1.0
+  firebase_core: ^2.10.0
+  firebase_auth: ^4.4.2
+  firebase_database: ^10.1.1
+  google_sign_in: ^6.1.0
+  flutter_facebook_auth: ^5.0.9
 
 dev_dependencies:
   flutter_test:

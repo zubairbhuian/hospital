@@ -9,7 +9,7 @@ import '../../common/widgets/custom_icon_btn.dart';
 import '../../common/widgets/custom_text.dart';
 import '../../common/widgets/drawer/custom_drawer.dart';
 import '../../common/widgets/home/home_card.dart';
-import '../doctor/doctor_screen.dart';
+import '../doctor/view.dart';
 import '../service/services_screen.dart';
 
 class HomeScreen extends StatelessWidget {
