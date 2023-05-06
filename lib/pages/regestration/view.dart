@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hospital/common/routes/pages.dart';
 import 'package:hospital/pages/regestration/index.dart';
 
 import 'package:intl/intl.dart';
@@ -14,7 +15,6 @@ import '../../common/widgets/custom_appbar_shape.dart';
 import '../../common/widgets/custom_btn.dart';
 import '../../common/widgets/custom_text.dart';
 import '../../common/widgets/custom_text_field.dart';
-import '../login/view.dart';
 
 class RegestrationScreen extends GetWidget<RegestrationController> {
   const RegestrationScreen({super.key});
@@ -35,7 +35,7 @@ class RegestrationScreen extends GetWidget<RegestrationController> {
                   size: 15,
                 ),
                 onPressed: () {
-                  Get.off(() => const LoginScreen());
+                  Get.back();
                 },
               )),
           flexibleSpace: ClipPath(
@@ -364,6 +364,7 @@ class RegestrationScreen extends GetWidget<RegestrationController> {
                       title: 'Sign Up',
                       onPressed: () async {
                         if (controller.formKey.currentState!.validate()) {
+                          controller.handralRegester();
                           // Process data.
                         }
                       },
@@ -391,7 +392,9 @@ class RegestrationScreen extends GetWidget<RegestrationController> {
                               color: Color(0xffDD4B39),
                               size: 17,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              controller.handralGoogleSignIn();
+                            }),
                       ],
                     ),
                   ],
@@ -412,7 +415,7 @@ class RegestrationScreen extends GetWidget<RegestrationController> {
                   TextSpan(
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          Get.off(() => const LoginScreen());
+                          Get.offNamed(AppPages.SIGN_IN);
                         },
                       text: 'Log in',
                       style: const TextStyle(color: AppColor.green))

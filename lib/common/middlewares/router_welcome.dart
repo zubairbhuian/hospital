@@ -8,7 +8,7 @@ import '../store/user.dart';
 
 class RouteWlcomMiddleware extends GetMiddleware {
   @override
-  int? priority = 1;
+  int? priority = 0;
   RouteWlcomMiddleware({
     this.priority,
   });
