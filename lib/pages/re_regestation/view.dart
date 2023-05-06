@@ -32,7 +32,7 @@ class ReRegestrationScreen extends GetWidget<ReRegestrationController> {
                   size: 15,
                 ),
                 onPressed: () {
-                  Get.off(() => const LoginScreen());
+                  Get.back();
                 },
               )),
           flexibleSpace: ClipPath(

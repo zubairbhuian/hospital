@@ -8,7 +8,7 @@ import 'package:hospital/pages/forget_pass/controller.dart';
 import '../../common/utils/app_color.dart';
 import '../../common/widgets/custom_appbar_shape.dart';
 import '../../common/widgets/custom_btn.dart';
-import '../login/index.dart';
+
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -66,7 +66,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               size: 15,
             ),
             onPressed: () {
-              Get.off(() => const LoginScreen());
+              Get.back();
             },
           )),
       centerTitle: true,

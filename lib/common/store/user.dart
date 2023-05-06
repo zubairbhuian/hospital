@@ -7,6 +7,7 @@ import '../models/user.dart';
 import '../utils/app_constant.dart';
 
 class UserStore extends GetxController {
+  
   static UserStore get to => Get.find();
 
   final _isLogin = false.obs;

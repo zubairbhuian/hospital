@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "567786317416-orfp4d326rn94taok7e41h6cp5e7t4i5.apps.googleusercontent.com",
+          "client_id": "567786317416-hii6e9r9nlvk568hdct3a0ia8eudvaed.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.hospital",
-            "certificate_hash": "54adf4ba39c5ee23f1de92db6d6f54ff0b863b6c"
+            "certificate_hash": "cc10f21050aca584bfcac6a9060b5c6846517b4a"
           }
         },
         {

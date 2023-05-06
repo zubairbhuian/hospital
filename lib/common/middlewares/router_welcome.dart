@@ -7,9 +7,10 @@ import '../store/config.dart';
 import '../store/user.dart';
 
 class RouteWlcomMiddleware extends GetMiddleware {
-  int? priority = 0;
+  @override
+  int? priority = 1;
   RouteWlcomMiddleware({
-   this.priority,
+    this.priority,
   });
 
   @override
@@ -19,7 +20,7 @@ class RouteWlcomMiddleware extends GetMiddleware {
       return null;
     } else if (UserStore.to.isLogin == true) {
       return const RouteSettings(name: AppRoutes.Application);
-    }else{
+    } else {
       return const RouteSettings(name: AppRoutes.SIGN_IN);
     }
   }

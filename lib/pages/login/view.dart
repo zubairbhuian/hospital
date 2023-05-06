@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hospital/common/routes/app_routes.dart';
 import 'package:hospital/common/widgets/custom_text.dart';
 import 'package:hospital/common/widgets/custom_text_field.dart';
 import 'package:hospital/pages/login/index.dart';
@@ -13,7 +14,7 @@ import '../../common/widgets/auth_btn.dart';
 import '../../common/widgets/custom_appbar_shape.dart';
 import '../../common/widgets/custom_btn.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends GetView<LogInController> {
   const LoginScreen({super.key});
 
   @override
@@ -106,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                           color: AppColor.green,
                         ),
                         onTap: () {
-                          // Get.off(() => const ForgotPasswordScreen());
+                          Get.toNamed(AppRoutes.FORGET_PASS);
                         },
                       ),
                     ),
@@ -114,7 +115,10 @@ class LoginScreen extends StatelessWidget {
                       height: 20,
                     ),
                     CustomBtn(
-                      onPressed: () async {},
+                      onPressed: () async {
+                        controller.handleEmailSignIn();
+                        // Get.offAllNamed(AppRoutes.Application);
+                      },
                       title: 'Sign in',
                     ),
                     const SizedBox(
@@ -129,7 +133,9 @@ class LoginScreen extends StatelessWidget {
                               color: Color(0xff3B5999),
                               size: 17,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              controller.handleFaceBookSignIn();
+                            }),
                         const SizedBox(
                           width: 10,
                         ),
@@ -140,7 +146,9 @@ class LoginScreen extends StatelessWidget {
                               color: Color(0xffDD4B39),
                               size: 17,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              controller.handleGoogleSignIn();
+                            }),
                       ],
                     ),
                   ],
@@ -163,7 +171,7 @@ class LoginScreen extends StatelessWidget {
                     TextSpan(
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            // Get.off(() => const RegestrationScreen());
+                            Get.toNamed(AppRoutes.REGESTATION);
                           },
                         text: ' Create new',
                         style: const TextStyle(

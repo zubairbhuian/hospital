@@ -25,7 +25,7 @@ class IntroScreen extends GetWidget<IntroController> {
               back: const Text("Previous"),
               onDone: () {
                 ConfigStore.to.saveAlreadyOpen();
-                Get.offAllNamed(AppRoutes.Application);
+                Get.offAllNamed(AppRoutes.SIGN_IN);
               },
               showBackButton: true,
               showNextButton: true,

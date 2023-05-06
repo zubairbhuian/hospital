@@ -12,8 +12,8 @@ import 'common/store/user.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   await Get.putAsync<StorageService>(() => StorageService().init());
+  await Firebase.initializeApp();
   Get.put<ConfigStore>(ConfigStore());
   Get.put<UserStore>(UserStore());
   runApp(const MyApp());

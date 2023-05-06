@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hospital/pages/login/index.dart';
 
 class ForgetPasswardController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final emailControter = TextEditingController();
+  final emailControter = TextEditingController(text: LogInController.to.emailControter.text);
 
   @override
   void onClose() {
