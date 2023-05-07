@@ -363,10 +363,11 @@ class RegestrationScreen extends GetWidget<RegestrationController> {
                     CustomBtn(
                       title: 'Sign Up',
                       onPressed: () async {
-                        if (controller.formKey.currentState!.validate()) {
-                          controller.handralRegester();
-                          // Process data.
-                        }
+                         controller.handralRegester();
+                        // if (controller.formKey.currentState!.validate()) {
+                         
+                       
+                        // }
                       },
                     ),
                     const SizedBox(

@@ -46,16 +46,6 @@ class RegestrationController extends GetxController {
       userProfile.dateOfBirth = dateOfBirthControter.text;
       // UserStore
       UserStore.to.saveProfile(userProfile);
-      var userDatabase = await db
-          .collection("users")
-          .withConverter(
-            fromFirestore: UserData.fromFirestore,
-            toFirestore: (UserData userData, options) => userData.toFirestore(),
-          )
-          .where("id", isEqualTo: credential.user?.uid)
-          .get();
-
-      if (userDatabase.docs.isEmpty) {
         final data = UserData(
             id: credential.user?.uid,
             name: nameControter.text,
@@ -72,14 +62,15 @@ class RegestrationController extends GetxController {
 
         await db
             .collection("users")
+            .doc(credential.user?.uid)
             .withConverter(
               fromFirestore: UserData.fromFirestore,
               toFirestore: (UserData userData, options) =>
                   userData.toFirestore(),
             )
-            .add(data);
+            .set(data);
         Get.offAll(AppRoutes.Application);
-      }
+      
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
         Get.snackbar("Ooops!", "The account already exists for that email.");
