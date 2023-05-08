@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hospital/common/models/user.dart';
 import 'package:hospital/common/routes/app_routes.dart';
+import 'package:hospital/common/widgets/common_func.dart';
 
 import '../../common/store/user.dart';
 
@@ -16,6 +17,7 @@ class LogInController extends GetxController {
   static LogInController get to => Get.find();
 
   bool obscureText = true;
+  bool isLoaded = false;
   UserLoginResponseEntity userProfile = UserLoginResponseEntity();
 
   final formKey = GlobalKey<FormState>();
@@ -27,6 +29,8 @@ class LogInController extends GetxController {
 
   Future<void> handleEmailSignIn() async {
     try {
+      isLoaded = true;
+      update();
       // Singin
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailControter.text, password: passwordControter.text);
@@ -53,27 +57,32 @@ class LogInController extends GetxController {
       // UserStore func
       UserStore.to.saveProfile(userProfile);
       // Display
-      Get.snackbar("Congrach", "Login Success");
+      // snackbar
+      customSnackbar(msg: 'Login Success');
       Get.offAllNamed(AppRoutes.Application);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        Get.snackbar("Opps!", 'No user found for that email.');
+        customSnackbar(msg: 'No user found for that email.');
       } else if (e.code == 'wrong-password') {
-        Get.snackbar("Opps!", 'Wrong password provided for that user.');
+        customSnackbar(msg: 'Wrong password provided for that user.');
       }
     }
+    isLoaded = false;
+    update();
   }
 
   Future<void> handleFaceBookSignIn() async {
     try {
-      Get.snackbar('Opps!!', "This Service is not available");
+      customSnackbar(msg: 'This service will be coming soon');
     } catch (e) {
-      Get.snackbar("Opps!", "Something was wrong");
+      customSnackbar(msg: 'Something was wrong');
       log(e.toString());
     }
   }
 
   Future<void> handleGoogleSignIn() async {
+    isLoaded = true;
+    update();
     try {
       log("Hey Zubair,It working");
       var user = await _googleSignIn.signIn();
@@ -125,16 +134,18 @@ class LogInController extends GetxController {
                       userData.toFirestore(),
                 )
                 .set(data);
+                
           }
         });
-
-        Get.snackbar("Congrach", "Login Success");
+        customSnackbar(msg: 'Login Success');
         Get.offNamed(AppRoutes.Application);
       }
     } catch (e) {
-      Get.snackbar("Opps!", "Something was wrong");
+      customSnackbar(msg: 'Something was wrong');
       log(e.toString());
     }
+    isLoaded = false;
+    update();
   }
 
   @override

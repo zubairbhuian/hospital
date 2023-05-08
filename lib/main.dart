@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hospital/common/routes/app_routes.dart';
 import 'package:hospital/common/routes/pages.dart';
+import 'package:hospital/pages/service_detail/service_detail_screen.dart';
 
 import 'common/store/config.dart';
 import 'common/store/storage.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 primarySwatch: Colors.green,
               ),
+              // home: ServiceDetailScreen(),
             )));
   }
 }

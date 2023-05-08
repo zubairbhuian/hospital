@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hospital/common/routes/app_routes.dart';
 import 'package:hospital/common/widgets/custom_text.dart';
 import 'package:hospital/common/widgets/custom_text_field.dart';
+import 'package:hospital/common/widgets/custom_widgets.dart';
 import 'package:hospital/pages/login/index.dart';
 
 import '../../common/utils/app_color.dart';
@@ -22,165 +23,173 @@ class LoginScreen extends GetView<LogInController> {
       backgroundColor: AppColor.white,
       extendBodyBehindAppBar: true,
       appBar: _appBar(),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(25),
-            child: GetBuilder<LogInController>(
-              builder: (controller) => Form(
-                key: controller.formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text('Welcome Back!',
-                        style: GoogleFonts.inter(
-                          textStyle: TextStyle(
-                              fontSize: 34.sp,
-                              fontWeight: FontWeight.w600,
-                              color: AppColor.black),
-                        )),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                        'You will get best quality health care service with the low cost',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.quicksand(
-                          textStyle: TextStyle(
-                              fontSize: 17.sp,
-                              fontWeight: FontWeight.w500,
-                              color: AppColor.grayLite),
-                        )),
-                    const SizedBox(
-                      height: 28,
-                    ),
-                    CustomTextField(
-                      controller: controller.emailControter,
-                      hintText: 'Email',
-                      prefixIcon: const Icon(
-                        Icons.email,
-                        color: AppColor.textColorLite,
-                        size: 25,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    CustomTextField(
-                      controller: controller.passwordControter,
-                      obscureText: controller.obscureText,
-                      hintText: 'Password',
-                      prefixIcon: const Icon(
-                        Icons.lock,
-                        // Icons.remove_red_eye,
-                        color: AppColor.textColorLite,
-                        size: 25,
-                      ),
-                      suffixIcon: controller.obscureText == true
-                          ? IconButton(
-                              onPressed: () {
-                                controller.obscureText = false;
-                                controller.update();
-                              },
-                              icon: const Icon(
-                                Icons.visibility_off,
-                                color: AppColor.textColorLite,
-                              ))
-                          : IconButton(
-                              onPressed: () {
-                                controller.obscureText = true;
-                                controller.update();
-                              },
-                              icon: const Icon(
-                                Icons.remove_red_eye,
-                              )),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    SizedBox(
-                      width: 100.sw,
-                      child: GestureDetector(
-                        child: const RegularText(
-                          text: 'Forgot Password?',
-                          textAlign: TextAlign.end,
-                          color: AppColor.green,
-                        ),
-                        onTap: () {
-                          Get.toNamed(AppRoutes.FORGET_PASS);
-                        },
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    CustomBtn(
-                      onPressed: () async {
-                        controller.handleEmailSignIn();
-                        // Get.offAllNamed(AppRoutes.Application);
-                      },
-                      title: 'Sign in',
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Row(
+      body: GetBuilder<LogInController>(
+          builder: (controller) => Stack(
+                children: [
+                  Positioned(
+                    child: ListView(
                       children: [
-                        AuthBtn(
-                            btnTitle: 'facebook',
-                            icon: const FaIcon(
-                              FontAwesomeIcons.facebookF,
-                              color: Color(0xff3B5999),
-                              size: 17,
+                        Padding(
+                          padding: const EdgeInsets.all(25),
+                          child: Form(
+                            key: controller.formKey,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text('Welcome Back!',
+                                    style: GoogleFonts.inter(
+                                      textStyle: TextStyle(
+                                          fontSize: 34.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColor.black),
+                                    )),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                    'You will get best quality health care service with the low cost',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.quicksand(
+                                      textStyle: TextStyle(
+                                          fontSize: 17.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColor.grayLite),
+                                    )),
+                                const SizedBox(
+                                  height: 28,
+                                ),
+                                CustomTextField(
+                                  controller: controller.emailControter,
+                                  hintText: 'Email',
+                                  prefixIcon: const Icon(
+                                    Icons.email,
+                                    color: AppColor.textColorLite,
+                                    size: 25,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                CustomTextField(
+                                  controller: controller.passwordControter,
+                                  obscureText: controller.obscureText,
+                                  hintText: 'Password',
+                                  prefixIcon: const Icon(
+                                    Icons.lock,
+                                    // Icons.remove_red_eye,
+                                    color: AppColor.textColorLite,
+                                    size: 25,
+                                  ),
+                                  suffixIcon: controller.obscureText == true
+                                      ? IconButton(
+                                          onPressed: () {
+                                            controller.obscureText = false;
+                                            controller.update();
+                                          },
+                                          icon: const Icon(
+                                            Icons.visibility_off,
+                                            color: AppColor.textColorLite,
+                                          ))
+                                      : IconButton(
+                                          onPressed: () {
+                                            controller.obscureText = true;
+                                            controller.update();
+                                          },
+                                          icon: const Icon(
+                                            Icons.remove_red_eye,
+                                          )),
+                                ),
+                                const SizedBox(
+                                  height: 6,
+                                ),
+                                SizedBox(
+                                  width: 100.sw,
+                                  child: GestureDetector(
+                                    child: const RegularText(
+                                      text: 'Forgot Password?',
+                                      textAlign: TextAlign.end,
+                                      color: AppColor.green,
+                                    ),
+                                    onTap: () {
+                                      Get.toNamed(AppRoutes.FORGET_PASS);
+                                    },
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                CustomBtn(
+                                  onPressed: () async {
+                                    controller.handleEmailSignIn();
+                                    // Get.offAllNamed(AppRoutes.Application);
+                                  },
+                                  title: 'Sign in',
+                                ),
+                                const SizedBox(
+                                  height: 30,
+                                ),
+                                Row(
+                                  children: [
+                                    AuthBtn(
+                                        btnTitle: 'facebook',
+                                        icon: const FaIcon(
+                                          FontAwesomeIcons.facebookF,
+                                          color: Color(0xff3B5999),
+                                          size: 17,
+                                        ),
+                                        onPressed: () {
+                                          controller.handleFaceBookSignIn();
+                                        }),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    AuthBtn(
+                                        btnTitle: 'Google',
+                                        icon: const FaIcon(
+                                          FontAwesomeIcons.google,
+                                          color: Color(0xffDD4B39),
+                                          size: 17,
+                                        ),
+                                        onPressed: () {
+                                          controller.handleGoogleSignIn();
+                                        }),
+                                  ],
+                                ),
+                              ],
                             ),
-                            onPressed: () {
-                              controller.handleFaceBookSignIn();
-                            }),
-                        const SizedBox(
-                          width: 10,
+                          ),
                         ),
-                        AuthBtn(
-                            btnTitle: 'Google',
-                            icon: const FaIcon(
-                              FontAwesomeIcons.google,
-                              color: Color(0xffDD4B39),
-                              size: 17,
-                            ),
-                            onPressed: () {
-                              controller.handleGoogleSignIn();
-                            }),
+                        SizedBox(
+                          height: 50.h,
+                        ),
+                        SizedBox(
+                          height: 60.h,
+                          child: Center(
+                            child: RichText(
+                                text: TextSpan(
+                                    text: 'Don’t have an account?  ',
+                                    style: const TextStyle(
+                                        color: AppColor.black, fontSize: 15),
+                                    children: [
+                                  TextSpan(
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () {
+                                          Get.toNamed(AppRoutes.REGESTATION);
+                                        },
+                                      text: ' Create new',
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColor.blue))
+                                ])),
+                          ),
+                        )
                       ],
                     ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 50.h,
-          ),
-          SizedBox(
-            height: 60.h,
-            child: Center(
-              child: RichText(
-                  text: TextSpan(
-                      text: 'Don’t have an account?  ',
-                      style:
-                          const TextStyle(color: AppColor.black, fontSize: 15),
-                      children: [
-                    TextSpan(
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Get.toNamed(AppRoutes.REGESTATION);
-                          },
-                        text: ' Create new',
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w500, color: AppColor.blue))
-                  ])),
-            ),
-          )
-        ],
-      ));
+                  ),
+                  if(controller.isLoaded)
+                  const Positioned(child: Loader())
+                ],
+              )));
 
   AppBar _appBar() => AppBar(
       leading: const SizedBox(height: 10),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hospital/common/routes/app_routes.dart';
 import 'package:hospital/common/routes/pages.dart';
 import 'package:hospital/pages/regestration/index.dart';
 
@@ -363,10 +364,10 @@ class RegestrationScreen extends GetWidget<RegestrationController> {
                     CustomBtn(
                       title: 'Sign Up',
                       onPressed: () async {
-                         controller.handralRegester();
+                        controller.handralRegester();
+                        Get.offAllNamed(AppRoutes.Application);
                         // if (controller.formKey.currentState!.validate()) {
-                         
-                       
+
                         // }
                       },
                     ),
