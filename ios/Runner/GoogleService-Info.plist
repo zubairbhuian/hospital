@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>567786317416-b4ifdqoe78sr3ffjg892lbblq60gidnb.apps.googleusercontent.com</string>
+	<string>567786317416-trv6phrdl6gc272s46iq61a4timh2f3k.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.567786317416-b4ifdqoe78sr3ffjg892lbblq60gidnb</string>
+	<string>com.googleusercontent.apps.567786317416-trv6phrdl6gc272s46iq61a4timh2f3k</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>567786317416-hii6e9r9nlvk568hdct3a0ia8eudvaed.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.hospitall</string>
+	<string>com.example.hospital</string>
 	<key>PROJECT_ID</key>
 	<string>hoapital-omor</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:567786317416:ios:bd47a4d8a1d79a3003bddd</string>
+	<string>1:567786317416:ios:f0ca24823813b68703bddd</string>
 </dict>
 </plist>

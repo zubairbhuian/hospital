@@ -9,10 +9,11 @@ import 'package:hospital/common/routes/pages.dart';
 import 'common/store/config.dart';
 import 'common/store/storage.dart';
 import 'common/store/user.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await Get.putAsync<StorageService>(() => StorageService().init());
   
   Get.put<ConfigStore>(ConfigStore());
@@ -41,3 +42,4 @@ class MyApp extends StatelessWidget {
             )));
   }
 }
+ 

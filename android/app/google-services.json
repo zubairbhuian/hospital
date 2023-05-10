@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:567786317416:android:0ff5ddf574dd5a6d03bddd",
+        "mobilesdk_app_id": "1:567786317416:android:bb73a4afd5f4b15003bddd",
         "android_client_info": {
           "package_name": "com.example.hospital"
         }
