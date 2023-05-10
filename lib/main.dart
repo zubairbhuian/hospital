@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hospital/common/routes/app_routes.dart';
 import 'package:hospital/common/routes/pages.dart';
-import 'package:hospital/pages/service_detail/service_detail_screen.dart';
 
 import 'common/store/config.dart';
 import 'common/store/storage.dart';
@@ -13,8 +12,9 @@ import 'common/store/user.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Get.putAsync<StorageService>(() => StorageService().init());
   await Firebase.initializeApp();
+  await Get.putAsync<StorageService>(() => StorageService().init());
+  
   Get.put<ConfigStore>(ConfigStore());
   Get.put<UserStore>(UserStore());
   runApp(const MyApp());

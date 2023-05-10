@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>567786317416-b4ifdqoe78sr3ffjg892lbblq60gidnb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.567786317416-b4ifdqoe78sr3ffjg892lbblq60gidnb</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>567786317416-hii6e9r9nlvk568hdct3a0ia8eudvaed.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC-3NdQvcN6R_AaGhvqUZPos3XTgN4LHig</string>
+	<key>GCM_SENDER_ID</key>
+	<string>567786317416</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.hospitall</string>
+	<key>PROJECT_ID</key>
+	<string>hoapital-omor</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hoapital-omor.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:567786317416:ios:bd47a4d8a1d79a3003bddd</string>
+</dict>
+</plist>
