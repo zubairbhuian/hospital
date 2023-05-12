@@ -2,6 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+
+	<key>CFBundleURLTypes</key>
+	<array>
+	<dict>
+	<key>CFBundleURLSchemes</key>
+	<array>
+		<string>fb2519889091497868</string>
+	</array>
+	</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>2519889091497868</string>
+	<key>FacebookClientToken</key>
+	<string>3fe9a57c069fd39f3719f682e858a29f</string>
+	<key>FacebookDisplayName</key>
+	<string>Hospital Auth</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
