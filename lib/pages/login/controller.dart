@@ -73,15 +73,7 @@ class LogInController extends GetxController {
 
   Future<void> handleFaceBookSignIn() async {
     try {
-      // await FacebookAuth.instance
-      //     .login(permissions: ["public_profile", "email"]).then((value) {
-      //   FacebookAuth.instance.getUserData().then((value) {
-      //     log(value.toString());
-      //   });
-      // });
-
-      // customSnackbar(msg: 'Facebook login Sucess');
-      customSnackbar(msg: 'This service is not abailable now');
+      customSnackbar(msg: 'This service will be coming soon');
     } catch (e) {
       customSnackbar(msg: 'Something was wrong');
       log(e.toString());
@@ -142,6 +134,7 @@ class LogInController extends GetxController {
                       userData.toFirestore(),
                 )
                 .set(data);
+                
           }
         });
         customSnackbar(msg: 'Login Success');
