@@ -26,6 +26,17 @@ dependencies:
   animate_do: ^3.3.3
   get: ^4.6.6
 
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  color: "#8A0051"
+  image: assets/logos/splash_logo.png
+
+  android_12:
+    color: "#8A0051"
+    image: assets/logos/splash_logo.png
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -33,4 +44,31 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/logos/
+    - assets/icons/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+          weight: 800        
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter-Thin.ttf
+          weight: 100
+
 
