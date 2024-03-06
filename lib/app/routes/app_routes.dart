@@ -10,6 +10,10 @@ abstract class Routes {
   static const SIGN_IN = _Paths.SIGN_IN;
   static const FORGET_PASSWORT = _Paths.FORGET_PASSWORT;
   static const ENTRY_POINT = _Paths.ENTRY_POINT;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const SETTINGS = _Paths.SETTINGS;
+  static const SERVICES = _Paths.SERVICES;
+  static const HOME = _Paths.HOME;
 }
 
 abstract class _Paths {
@@ -19,4 +23,8 @@ abstract class _Paths {
   static const SIGN_IN = '/sign-in';
   static const FORGET_PASSWORT = '/forget-passwort';
   static const ENTRY_POINT = '/entry-point';
+  static const NOTIFICATION = '/notification';
+  static const SETTINGS = '/settings';
+  static const SERVICES = '/services';
+  static const HOME = '/home';
 }

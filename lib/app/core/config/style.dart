@@ -5,18 +5,18 @@ import 'color.dart';
 // ******** Headline **********
 TextStyle kHeadlineLarge = TextStyle(
   color: kTitleColor,
-  fontSize: 54.sp,
-  fontWeight: FontWeight.w700,
+  fontSize:34.sp,
+  fontWeight: FontWeight.w600,
 );
 TextStyle kHeadlineMedium = TextStyle(
   color: kTitleColor,
   fontSize: 24.sp,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w600,
 );
 TextStyle headlineSmall = TextStyle(
   color: kTitleColor,
   fontSize: 18.sp,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w600,
 );
 // ******* title ***********
 TextStyle kTitleLarge = TextStyle(

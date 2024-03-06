@@ -1,16 +1,48 @@
 # hospital
 
-A new Flutter project.
+<img src="./assets/gitHub/badges/built-with-love.svg" height="28px"/>&nbsp;&nbsp;
+<img src="./assets/gitHub/badges/flutter-dart.svg" height="28px" />&nbsp;&nbsp;
+<a href="https://choosealicense.com/licenses/mit/" target="_blank"><img src="./assets/gitHub/badges/license-MIT.svg" height="28px" /></a>&nbsp;&nbsp;
+<img src="screenshots/badges/Flutter-3.svg" height="28px" />&nbsp;&nbsp;
+<img src="./assets/gitHub/badges/dart-null_safety-blue.svg" height="28px"/>
 
-## Getting Started
+# Hospital
+Hellow, This is a Hospital Management applications </br>
+## [Download Demo App](https://bhuianfoodapi.herokuapp.com/download/learnquran)
+<br/>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+<!-- <img width="200"  src='screenshots/gif/doctor.gif'/> -->
+# App screen
+<p align="center">
+    <img  alt="zubairbhuian's streak" src="./assets/gitHub/2.png"/>
+</p>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<p align="center">
+    <img  alt="zubairbhuian's streak" src="./assets/gitHub/1.png"/>
+</p>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+    <img  alt="zubairbhuian's streak" src="./assets/gitHub/code.png"/>
+</p>
+
+Designer [Omar Faruk](https://web.facebook.com/omarfarukuiux) </br>
+Developer [Zubair Bhuian](https://web.facebook.com/zubair.bhuian)
+
+## Directory
+```dart
+lib
+ |-- models
+ |-- screens
+ |   |-- splash_screen.dart 
+ |   |-- home_screen.dart 
+ |   |-- login_screen.dart 
+ |   |-- singin_screen.dart 
+ |   |-- home_screen.dart 
+ |-- utils
+ |   |-- apps_color.dart 
+ |   |-- apps_color.dart 
+ |-- widgets
+ |-- main.dart 
+
+```

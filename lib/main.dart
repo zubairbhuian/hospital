@@ -21,8 +21,8 @@ Future<void> main() async {
   FlutterNativeSplash.remove();
 
   /// mobile orientation off
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  // SystemChrome.setPreferredOrientations(
+  //     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   // Status Bar Color
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: kPrimaryColor,
@@ -63,7 +63,8 @@ class MyApp extends StatelessWidget {
           initialBinding: BaseBinding(
             apiService: apiService,
           ),
-          initialRoute: AppPages.INITIAL,
+          // initialRoute: AppPages.INITIAL,
+          initialRoute: Routes.ENTRY_POINT,
           // initialRoute: Routes.SIGN_IN,
           getPages: AppPages.routes,
         );

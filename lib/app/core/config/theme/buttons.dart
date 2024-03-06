@@ -7,7 +7,7 @@ import '../fonts.dart';
 class Buttons {
   static ElevatedButtonThemeData elevatedButtonTheme = ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 16),
     side: null,
     elevation: 0,
     foregroundColor: kWhite,

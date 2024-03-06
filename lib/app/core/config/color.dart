@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-const Color kPrimaryColor = Color(0xff8A0051);
-const Color kTitleColor = Color(0xff323643);
-const Color kTextColor = Color(0xff000000);
-const Color kTextColorLight = Color(0xff858992);
+const Color kPrimaryColor = Color(0xff1EA922);
+const Color kTitleColor = Color(0xff3C3D3F);
+const Color kTextColor = Color(0xff3C3D3F);
+const Color kTextColorLight = Color(0xff8E9195);
 
 
-const Color kDisabledColor = Color.fromARGB(255, 211, 211, 211);
-const Color kDisabledTextColor = Color(0xff8A7F85);
+const Color kDisabledColor = Color.fromARGB(255, 229, 229, 229);
+const Color kDisabledTextColor = Color.fromARGB(255, 207, 207, 207);
 
 // common
 const Color kScaffoldBGColor = Colors.white;
@@ -19,7 +19,7 @@ const Color kInfoColor = Color.fromARGB(255, 2, 120, 255);
 const Color kWhite = Colors.white;
 const Color kRed = Colors.red;
 const Color kBlack = Colors.black;
-const Color kYellow = Color(0xffFFCA1E);
+const Color kYellow = Color(0xffC4CD26);
 
 // gradiant color
 // const LinearGradient kBtnGradiantColor = LinearGradient(

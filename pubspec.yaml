@@ -1,10 +1,10 @@
 name: hospital
 description: "A new Flutter project."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
 dependencies:
   flutter:
     sdk: flutter
@@ -25,17 +25,18 @@ dependencies:
   shimmer: ^3.0.0
   animate_do: ^3.3.3
   get: ^4.6.6
+  curved_navigation_bar: ^1.0.3
 
 flutter_native_splash:
   android: true
   ios: true
   web: false
-  color: "#8A0051"
-  image: assets/logos/splash_logo.png
+  color: "#FFFFFF"
+  image: assets/logos/splash_log.png
 
   android_12:
-    color: "#8A0051"
-    image: assets/logos/splash_logo.png
+    color: "#FFFFFF"
+    image: assets/logos/splash_log.png
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +49,8 @@ flutter:
     - assets/images/
     - assets/logos/
     - assets/icons/
+    - assets/icons/auth/
+    - assets/icons/home/
 
   fonts:
     - family: Inter
@@ -55,7 +58,7 @@ flutter:
         - asset: assets/fonts/Inter-Black.ttf
           weight: 900
         - asset: assets/fonts/Inter-ExtraBold.ttf
-          weight: 800        
+          weight: 800
         - asset: assets/fonts/Inter-Bold.ttf
           weight: 700
         - asset: assets/fonts/Inter-SemiBold.ttf
@@ -70,5 +73,3 @@ flutter:
           weight: 200
         - asset: assets/fonts/Inter-Thin.ttf
           weight: 100
-
-

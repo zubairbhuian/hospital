@@ -1,81 +1,90 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../core/utils/int_extensions.dart';
 import '../core/config/color.dart';
 import '../core/config/style.dart';
-import '../core/utils/icons.dart';
-import 'popup_dialogs.dart';
-
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
-  final VoidCallback? onLeading;
-  final double? preferredHeight;
-  final List<Widget>? actions;
+  final Color? bgColor;
+  final Color? fgColor;
+  final Function? onLeading;
   final bool isShadow;
   final bool centerTitle;
+  final bool? isPrimary;
 
-  final bool hasActionBtn;
-  final void Function()? actionBtnOnTap;
-  final String actionBtnText;
-
-  const CustomAppBar(
-      {super.key,
-      this.isShadow = false,
-      this.centerTitle = true,
-      this.title,
-      this.onLeading,
-      this.preferredHeight,
-      this.actions,
-      this.hasActionBtn = false,
-      this.actionBtnOnTap,
-      this.actionBtnText = 'Text'});
+  const CustomAppBar({
+    super.key,
+    this.isShadow = false,
+    this.centerTitle = true,
+    this.title,
+    this.onLeading,
+    this.bgColor,
+    this.fgColor,
+    this.isPrimary = false,
+  });
 // Specify the desired height of the AppBar
   @override
-  Size get preferredSize => Size.fromHeight(preferredHeight ?? 66.0);
+  Size get preferredSize => Size.fromHeight(isPrimary == true ? 70.0 : 60);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-            color: const Color(
-                0xffF2F8FD), // Adjust the background color of the AppBar
+            color: bgColor ?? kPrimaryColor,
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
+            ),
             boxShadow: isShadow ? [kAppbarShadow] : []),
         child: AppBar(
           automaticallyImplyLeading: false,
           titleSpacing: 0,
           elevation: 0,
           centerTitle: centerTitle,
-          leadingWidth: 80,
-          backgroundColor: const Color(0xffF2F8FD),
+          leadingWidth: isPrimary == true ? 80 : 60,
+          backgroundColor: Colors.transparent,
           foregroundColor: kTextColor,
-          titleTextStyle: kTitleLarge.copyWith(color: const Color(0xff2F2F2F)),
+          titleTextStyle: kTitleLarge.copyWith(color: fgColor ?? kTextColor),
           // appbar leading
-          leading: Center(
-            child: CircleAvatar(
-              radius: 24,
-              backgroundColor: kWhite,
-              child: SvgPicture.asset(IconsPath.userFilled),
-            ),
-          ),
+          leading: isPrimary == true
+              ? Center(
+                  child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: kWhite,
+                            width: 2,
+                          )),
+                      child: Image.asset("assets/images/demo_user.png")),
+                )
+              : IconButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: Icon(Icons.arrow_back_ios_new,
+                      size: 16, color: fgColor ?? kTextColor)),
           // appbar title
           title: title,
           // appbar actions),
-          actions: [
-            GestureDetector(
-              onTap: () {
-                PopupDialog.logOutDialog();
-              },
-              child: CircleAvatar(
-                radius: 24,
-                backgroundColor: kWhite,
-                child: SvgPicture.asset(IconsPath.logout),
-              ),
-            ),
-            20.width,
-          ],
+          actions: isPrimary == true
+              ? [
+                  IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                    icon: SvgPicture.asset(
+                      'assets/icons/home/bars.svg',
+                      color: fgColor ?? kTextColor,
+                    ),
+                  ),
+                  10.width,
+                ]
+              : null,
         ));
   }
 }

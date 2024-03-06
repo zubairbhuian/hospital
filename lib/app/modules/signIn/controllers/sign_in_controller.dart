@@ -2,20 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class SignInController extends GetxController {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController emailController = TextEditingController(text: 'admin@gmail.com');
+  final TextEditingController passwordController = TextEditingController(text: '12345678');
 }

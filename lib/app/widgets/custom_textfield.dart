@@ -146,12 +146,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
             // ********** style ********
             style: _focusNode.hasFocus
                 ? kBodyLarge
-                : kBodyLarge.copyWith(color: kDisabledTextColor),
+                : kBodyLarge.copyWith(color: kTextColorLight),
             // ********** controller ********
             onEditingComplete: widget.onEditingComplete,
             // ********** keyboardType ********
             keyboardType: widget.keyboardType,
-
+          
             focusNode: _focusNode,
             //! ********** decoration ********
             decoration: InputDecoration(
@@ -165,6 +165,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   widget.errorStyle ?? kBodyLarge.copyWith(color: kDangerColor),
               errorMaxLines: 5,
               // ********** padding ********
+              
 
               contentPadding: widget.padding ??
                   const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
@@ -190,8 +191,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
                         child: Center(
                           child: SvgPicture.asset(
                             _isShowPasss
-                                ? "assets/icons/auth/Show.svg"
-                                : "assets/icons/auth/Hide.svg",
+                                ? "assets/icons/auth/show.svg"
+                                : "assets/icons/auth/hide.svg",
                             color: _focusNode.hasFocus
                                 ? kPrimaryColor
                                 : kDisabledTextColor,
@@ -483,10 +484,9 @@ class CustomTextWithLabel extends StatelessWidget {
       this.fontSize,
       this.fontWeight,
       this.textAlign,
-      Key? key,
+      super.key,
       this.overflow,
-      required this.text2})
-      : super(key: key);
+      required this.text2});
 
   @override
   Widget build(BuildContext context) => Row(
@@ -513,13 +513,13 @@ class CustomRadioTile1 extends StatelessWidget {
   final Function(String?)? onChange;
   final String value, groupValue, title, subtitle;
   const CustomRadioTile1({
-    Key? key,
+    super.key,
     required this.onChange,
     required this.value,
     required this.groupValue,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
