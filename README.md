@@ -29,20 +29,31 @@ Hellow, This is a Hospital Management applications </br>
 Designer [Omar Faruk](https://web.facebook.com/omarfarukuiux) </br>
 Developer [Zubair Bhuian](https://web.facebook.com/zubair.bhuian)
 
-## Directory
-```dart
-lib
- |-- models
- |-- screens
- |   |-- splash_screen.dart 
- |   |-- home_screen.dart 
- |   |-- login_screen.dart 
- |   |-- singin_screen.dart 
- |   |-- home_screen.dart 
- |-- utils
- |   |-- apps_color.dart 
- |   |-- apps_color.dart 
- |-- widgets
- |-- main.dart 
 
-```
+## How to Run This
+
+1. **Clone the repository:**
+
+    ```
+    git clone https://github.com/zubairbhuian/hospital.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```
+    cd hospital
+    ```
+
+3. **Install dependencies:**
+
+    ```
+    flutter pub get
+    ```
+
+4. **Run the app:**
+
+    ```
+    flutter run 
+    ```
+
+   This command will build and run the Flutter app on a connected device or emulator.
